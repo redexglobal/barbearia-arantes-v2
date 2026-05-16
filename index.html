@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Barbearia Arantes | Homens de Estilo – Goiânia GO</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap');
+  :root{
+    --preto:#080808;
+    --cinza-esc:#111111;
+    --cinza:#1a1a1a;
+    --cinza2:#222222;
+    --dourado:#C9A84C;
+    --dourado-claro:#e8c96a;
+    --branco:#f0f0f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--preto);color:var(--branco);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
+
+  /* ── HEADER ── */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:0.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between;
+    background:rgba(8,8,8,0.95);backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(201,168,76,0.25);}
+  .logo-nav img{height:52px;width:auto;object-fit:contain;filter:invert(0);}
+  nav{display:flex;align-items:center;gap:2rem;}
+  nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75rem;
+    font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+  nav a:hover{color:var(--dourado);}
+  .nav-cta{background:var(--dourado) !important;color:#000 !important;
+    padding:0.55rem 1.4rem;border-radius:7px;font-weight:900 !important;
+    transition:background 0.2s !important;}
+  .nav-cta:hover{background:var(--dourado-claro) !important;}
+
+  /* ── HERO ── */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#080808 0%,#101010 60%,#0d0a04 100%);}
+  .hero::before{content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 60% 40%,rgba(201,168,76,0.1) 0%,transparent 65%);}
+  /* linhas decorativas */
+  .hero-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .hero-deco::before{content:'';position:absolute;top:10%;left:-5%;
+    width:500px;height:500px;border-radius:50%;
+    border:1px solid rgba(201,168,76,0.06);}
+  .hero-deco::after{content:'';position:absolute;bottom:-10%;right:-5%;
+    width:400px;height:400px;border-radius:50%;
+    border:1px solid rgba(201,168,76,0.05);}
+  .hero-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;
+    padding:7rem 2rem 5rem;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .hero-logo{width:200px;height:auto;margin-bottom:2.5rem;
+    filter:drop-shadow(0 0 30px rgba(201,168,76,0.2));
+    animation:logoIn 0.8s ease forwards;}
+  @keyframes logoIn{from{opacity:0;transform:scale(0.85);}to{opacity:1;transform:scale(1);}}
+  .hero-badge{display:inline-block;background:rgba(201,168,76,0.1);
+    border:1px solid rgba(201,168,76,0.35);border-radius:50px;
+    padding:0.38rem 1.4rem;font-size:0.62rem;font-weight:800;
+    letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-bottom:1.4rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7vw,5.5rem);
+    font-weight:900;line-height:1.05;color:var(--branco);margin-bottom:0.8rem;}
+  .hero h1 span{color:var(--dourado);}
+  .hero-sub{font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;
+    letter-spacing:5px;text-transform:uppercase;margin-bottom:3rem;}
+
+  /* ── BOTÃO AGENDAR PRINCIPAL ── */
+  .btn-agendar{display:inline-flex;align-items:center;gap:0.8rem;
+    background:linear-gradient(135deg,#25D366,#1ebe5d);color:#fff;text-decoration:none;
+    padding:1.1rem 2.8rem;border-radius:50px;font-weight:900;font-size:1rem;
+    letter-spacing:1px;text-transform:uppercase;
+    box-shadow:0 8px 30px rgba(37,211,102,0.4);transition:all 0.25s;
+    animation:pulseBtn 2.5s ease-in-out infinite;}
+  .btn-agendar:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,0.55);}
+  .btn-agendar svg{width:22px;height:22px;flex-shrink:0;}
+  @keyframes pulseBtn{0%,100%{box-shadow:0 8px 30px rgba(37,211,102,0.4);}
+    50%{box-shadow:0 8px 44px rgba(37,211,102,0.65);}}
+
+  .hero-btns{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;}
+  .btn-outline{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);
+    text-decoration:none;padding:1rem 2.2rem;border-radius:50px;font-weight:700;
+    font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;}
+  .btn-outline:hover{border-color:var(--dourado);color:var(--dourado);}
+
+  /* ── SEÇÕES ── */
+  section{padding:6rem 2rem;}
+  .sec-inner{max-width:1100px;margin:0 auto;}
+  .sec-tag{font-size:0.6rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+    color:var(--dourado);margin-bottom:0.7rem;display:block;}
+  .sec-titulo{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3rem);
+    font-weight:900;color:var(--branco);line-height:1.1;margin-bottom:0.8rem;}
+  .sec-titulo span{color:var(--dourado);}
+  .divisor{width:44px;height:2px;background:var(--dourado);margin:1.2rem 0 2rem;}
+
+  /* ── GALERIA ── */
+  #fotos{background:var(--cinza-esc);}
+  .galeria-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-top:2.5rem;}
+  .gal-item{border-radius:12px;overflow:hidden;aspect-ratio:3/4;position:relative;
+    border:1px solid rgba(201,168,76,0.1);transition:transform 0.3s;}
+  .gal-item:hover{transform:scale(1.02);}
+  .gal-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  /* destaque: primeiro item ocupa 2 linhas */
+  .gal-item.grande{grid-row:span 2;aspect-ratio:auto;}
+
+  /* ── SERVIÇOS ── */
+  #servicos{background:var(--preto);}
+  .servicos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.2rem;margin-top:2.5rem;}
+  .serv-card{background:var(--cinza);border:1px solid rgba(255,255,255,0.05);
+    border-radius:14px;padding:1.8rem;transition:all 0.25s;position:relative;overflow:hidden;}
+  .serv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:var(--dourado);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+  .serv-card:hover{border-color:rgba(201,168,76,0.25);transform:translateY(-4px);}
+  .serv-card:hover::after{transform:scaleX(1);}
+  .serv-icon{font-size:2rem;margin-bottom:1rem;display:block;}
+  .serv-nome{font-size:1rem;font-weight:900;color:var(--branco);margin-bottom:0.4rem;}
+  .serv-desc{font-size:0.76rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.2rem;}
+  .serv-preco{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--dourado);}
+  .serv-preco small{font-family:'Montserrat',sans-serif;font-size:0.68rem;
+    color:rgba(255,255,255,0.35);font-weight:600;margin-left:4px;}
+
+  /* ── AGENDAMENTO CTA ── */
+  #agendar{background:linear-gradient(135deg,#0d0d0d 0%,#181408 100%);
+    border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15);}
+  .agendar-inner{max-width:700px;margin:0 auto;text-align:center;padding:5rem 2rem;}
+  .agendar-inner .sec-titulo{font-size:clamp(2rem,5vw,3.2rem);}
+  .agendar-inner p{font-size:0.9rem;color:rgba(255,255,255,0.45);
+    line-height:1.8;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;}
+  .agendar-inner .divisor{margin-left:auto;margin-right:auto;}
+
+  /* ── HORÁRIOS ── */
+  #horarios{background:var(--cinza-esc);}
+  .horarios-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+    align-items:center;margin-top:2.5rem;}
+  .horario-img{border-radius:16px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);}
+  .horario-img img{width:100%;height:auto;display:block;}
+  .hora-lista{display:flex;flex-direction:column;gap:0.75rem;}
+  .hora-item{display:flex;justify-content:space-between;align-items:center;
+    padding:1rem 1.3rem;background:var(--cinza2);border-radius:10px;
+    border-left:3px solid var(--dourado);}
+  .hora-dia{font-size:0.82rem;font-weight:700;color:var(--branco);}
+  .hora-tempo{font-size:0.85rem;font-weight:900;color:var(--dourado);}
+
+  /* ── CONTATO ── */
+  #contato{background:var(--preto);}
+  .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;align-items:start;}
+  .contato-box{background:var(--cinza);border:1px solid rgba(201,168,76,0.15);
+    border-radius:16px;padding:2.2rem;}
+  .contato-item{display:flex;gap:1rem;margin-bottom:1.4rem;align-items:flex-start;}
+  .contato-item .ic{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+  .contato-item .info{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+  .contato-item .info strong{display:block;color:var(--branco);font-size:0.88rem;margin-bottom:0.1rem;}
+  .contrata-card{border-radius:16px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);}
+  .contrata-card img{width:100%;display:block;}
+
+  /* ── FOOTER ── */
+  footer{background:#040404;border-top:1px solid rgba(201,168,76,0.12);
+    padding:3rem 2rem;text-align:center;}
+  .footer-logo-img{height:70px;width:auto;margin-bottom:1rem;opacity:0.85;}
+  .footer-slogan{font-size:0.65rem;font-weight:700;letter-spacing:3px;
+    text-transform:uppercase;color:var(--dourado);margin-bottom:0.5rem;}
+  .footer-social a{color:var(--dourado);text-decoration:none;font-size:0.75rem;
+    font-weight:700;letter-spacing:1px;border:1px solid rgba(201,168,76,0.3);
+    padding:0.4rem 1.1rem;border-radius:50px;transition:all 0.2s;display:inline-block;margin:0.5rem 0;}
+  .footer-social a:hover{background:var(--dourado);color:#000;}
+  footer p{font-size:0.62rem;color:rgba(255,255,255,0.2);letter-spacing:1px;
+    text-transform:uppercase;margin-top:0.8rem;}
+
+  /* ── WHATSAPP FLOAT ── */
+  .wpp-float{position:fixed;bottom:2rem;right:2rem;z-index:999;
+    width:60px;height:60px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
+    box-shadow:0 6px 24px rgba(37,211,102,0.45);
+    transition:transform 0.2s;animation:pulseWpp 2.5s ease-in-out infinite;}
+  .wpp-float:hover{transform:scale(1.12);}
+  .wpp-float svg{width:30px;height:30px;fill:#fff;}
+  @keyframes pulseWpp{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45);}
+    50%{box-shadow:0 6px 36px rgba(37,211,102,0.75);}}
+
+  /* ── EXTRAS ── */
+  #extras{background:var(--cinza-esc);}
+  .extras-cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2.5rem;}
+  .extras-bloco h3{font-size:0.65rem;font-weight:800;letter-spacing:3px;
+    text-transform:uppercase;color:var(--dourado);margin-bottom:1rem;
+    padding-bottom:0.5rem;border-bottom:1px solid rgba(201,168,76,0.2);}
+  .extra-item{display:flex;justify-content:space-between;align-items:center;
+    padding:0.75rem 1rem;border-radius:8px;transition:background 0.2s;gap:1rem;}
+  .extra-item:hover{background:rgba(255,255,255,0.04);}
+  .extra-nome{font-size:0.84rem;font-weight:700;color:var(--branco);line-height:1.3;}
+  .extra-sub{font-size:0.68rem;color:rgba(255,255,255,0.35);font-weight:500;margin-top:1px;}
+  .extra-preco{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+    color:var(--dourado);white-space:nowrap;flex-shrink:0;}
+  .badge-orig{display:inline-block;background:rgba(201,168,76,0.12);
+    border:1px solid rgba(201,168,76,0.3);border-radius:4px;
+    font-size:0.58rem;font-weight:800;letter-spacing:1px;color:var(--dourado);
+    padding:0.15rem 0.5rem;margin-left:6px;vertical-align:middle;text-transform:uppercase;}
+
+  @media(max-width:768px){
+    nav a:not(.nav-cta){display:none;}
+    .galeria-grid{grid-template-columns:1fr 1fr;}
+    .gal-item.grande{grid-row:span 1;}
+    .horarios-wrap,.contato-grid,.extras-cols{grid-template-columns:1fr;}
+  }
+
+  /* ── CARRINHO ── */
+  .cart-btn{background:none;border:none;cursor:pointer;position:relative;
+    display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.7);
+    font-family:'Montserrat',sans-serif;font-size:0.75rem;font-weight:700;
+    letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;padding:0;}
+  .cart-btn:hover{color:var(--dourado);}
+  .cart-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;}
+  .cart-badge{position:absolute;top:-7px;right:-10px;background:var(--dourado);color:#000;
+    font-size:0.6rem;font-weight:900;width:18px;height:18px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform 0.2s;transform:scale(0);}
+  .cart-badge.vis{transform:scale(1);}
+
+  /* painel overlay */
+  .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);
+    z-index:500;opacity:0;pointer-events:none;transition:opacity 0.3s;
+    backdrop-filter:blur(4px);}
+  .cart-overlay.aberto{opacity:1;pointer-events:all;}
+
+  /* painel lateral */
+  .cart-painel{position:fixed;top:0;right:0;height:100vh;width:min(480px,100vw);
+    background:#111;border-left:1px solid rgba(201,168,76,0.2);
+    z-index:501;display:flex;flex-direction:column;
+    transform:translateX(100%);transition:transform 0.35s cubic-bezier(.4,0,.2,1);}
+  .cart-painel.aberto{transform:translateX(0);}
+
+  .cart-header{display:flex;align-items:center;justify-content:space-between;
+    padding:1.2rem 1.5rem;border-bottom:1px solid rgba(201,168,76,0.2);flex-shrink:0;}
+  .cart-header h2{font-family:'Playfair Display',serif;font-size:1.3rem;
+    font-weight:900;color:var(--branco);}
+  .cart-header h2 span{color:var(--dourado);}
+  .cart-fechar{background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.5);
+    font-size:1.5rem;line-height:1;transition:color 0.2s;padding:0;}
+  .cart-fechar:hover{color:var(--branco);}
+
+  .cart-body{flex:1;overflow-y:auto;padding:1.2rem 1.5rem;}
+  .cart-body::-webkit-scrollbar{width:4px;}
+  .cart-body::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
+
+  /* grupo de itens */
+  .cart-grupo{margin-bottom:1.6rem;}
+  .cart-grupo-titulo{font-size:0.6rem;font-weight:800;letter-spacing:3px;
+    text-transform:uppercase;color:var(--dourado);margin-bottom:0.7rem;
+    padding-bottom:0.4rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+
+  .cart-item{display:flex;align-items:center;gap:0.9rem;padding:0.65rem 0.8rem;
+    border-radius:10px;cursor:pointer;transition:background 0.15s;
+    border:1px solid transparent;}
+  .cart-item:hover{background:rgba(255,255,255,0.04);}
+  .cart-item.selecionado{background:rgba(201,168,76,0.08);
+    border-color:rgba(201,168,76,0.25);}
+
+  /* checkbox customizado */
+  .cart-check{width:20px;height:20px;border-radius:6px;flex-shrink:0;
+    border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;
+    justify-content:center;transition:all 0.15s;}
+  .cart-item.selecionado .cart-check{background:var(--dourado);border-color:var(--dourado);}
+  .cart-check svg{width:12px;height:12px;stroke:#000;fill:none;stroke-width:3;
+    opacity:0;transition:opacity 0.15s;}
+  .cart-item.selecionado .cart-check svg{opacity:1;}
+
+  .cart-item-info{flex:1;}
+  .cart-item-nome{font-size:0.83rem;font-weight:700;color:var(--branco);}
+  .cart-item-preco{font-size:0.75rem;color:var(--dourado);font-weight:700;margin-top:1px;}
+
+  /* agendamento */
+  .cart-agenda{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);
+    border-radius:12px;padding:1.2rem;margin-bottom:1.5rem;}
+  .cart-agenda h3{font-size:0.65rem;font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;color:var(--dourado);margin-bottom:1rem;}
+  .cart-agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+  .campo-ag label{font-size:0.62rem;font-weight:700;letter-spacing:1px;
+    text-transform:uppercase;color:rgba(255,255,255,0.5);display:block;margin-bottom:0.35rem;}
+  .campo-ag input,.campo-ag select{width:100%;background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.15);border-radius:8px;
+    padding:0.6rem 0.8rem;color:var(--branco);font-family:'Montserrat',sans-serif;
+    font-size:0.82rem;font-weight:600;outline:none;transition:border 0.2s;}
+  .campo-ag input:focus,.campo-ag select:focus{border-color:var(--dourado);}
+  .campo-ag select option{background:#1a1a1a;color:#fff;}
+
+  /* resumo */
+  .cart-footer{padding:1.2rem 1.5rem;border-top:1px solid rgba(201,168,76,0.2);flex-shrink:0;}
+  .cart-total-linha{display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:1rem;}
+  .cart-total-label{font-size:0.7rem;font-weight:700;letter-spacing:2px;
+    text-transform:uppercase;color:rgba(255,255,255,0.5);}
+  .cart-total-val{font-family:'Playfair Display',serif;font-size:1.6rem;
+    font-weight:900;color:var(--dourado);}
+  .cart-vazio{font-size:0.8rem;color:rgba(255,255,255,0.3);text-align:center;
+    padding:2rem 0;font-style:italic;}
+  .btn-enviar{width:100%;display:flex;align-items:center;justify-content:center;
+    gap:0.8rem;background:linear-gradient(135deg,#25D366,#1ebe5d);color:#fff;
+    border:none;padding:1rem;border-radius:12px;font-family:'Montserrat',sans-serif;
+    font-size:0.92rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;
+    cursor:pointer;transition:all 0.2s;box-shadow:0 6px 20px rgba(37,211,102,0.3);}
+  .btn-enviar:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.5);}
+  .btn-enviar:disabled{opacity:0.35;cursor:not-allowed;transform:none;}
+  .btn-enviar svg{width:20px;height:20px;fill:currentColor;}
+  .cart-aviso{font-size:0.68rem;color:rgba(255,255,255,0.3);text-align:center;
+    margin-top:0.6rem;line-height:1.5;}
+
+
+  /* ── 1. BANNER PROMO ── */
+  .promo-bar{background:linear-gradient(90deg,var(--dourado),var(--dourado-claro),var(--dourado));
+    color:#000;text-align:center;font-size:0.72rem;font-weight:800;letter-spacing:1.5px;
+    padding:0.5rem 3rem;position:relative;z-index:200;text-transform:uppercase;}
+  .promo-bar a{color:#000;text-decoration:underline;margin-left:8px;}
+  .promo-fechar{position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+    background:none;border:none;cursor:pointer;font-size:1rem;color:#000;opacity:0.6;}
+  .promo-fechar:hover{opacity:1;}
+  body.promo-off .promo-bar{display:none;}
+
+  /* ── 2. VÍDEO HERO ── */
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    z-index:0;opacity:0.28;pointer-events:none;}
+  .hero-video-overlay{position:absolute;inset:0;z-index:0;
+    background:linear-gradient(160deg,rgba(8,8,8,0.75) 0%,rgba(8,8,8,0.55) 100%);}
+
+  /* ── 3. CONTADORES ── */
+  .contadores{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+    margin:3rem 0 0;}
+  .cnt-card{text-align:center;padding:1.8rem 1rem;background:var(--cinza);
+    border-radius:14px;border:1px solid rgba(201,168,76,0.15);}
+  .cnt-num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;
+    color:var(--dourado);line-height:1;}
+  .cnt-label{font-size:0.62rem;font-weight:700;letter-spacing:2px;
+    text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.4rem;}
+
+  /* ── 4. ANTES/DEPOIS ── */
+  #antes-depois{background:var(--preto);}
+  .ad-wrap{position:relative;width:100%;max-width:720px;margin:2.5rem auto 0;
+    aspect-ratio:16/9;border-radius:16px;overflow:hidden;
+    border:1px solid rgba(201,168,76,0.2);cursor:col-resize;user-select:none;}
+  .ad-before,.ad-after{position:absolute;inset:0;width:100%;height:100%;}
+  .ad-before img,.ad-after img{width:100%;height:100%;object-fit:cover;display:block;}
+  .ad-after{clip-path:inset(0 50% 0 0);transition:clip-path 0s;}
+  .ad-label{position:absolute;bottom:1rem;font-size:0.65rem;font-weight:800;
+    letter-spacing:2px;text-transform:uppercase;padding:0.3rem 0.9rem;
+    border-radius:50px;backdrop-filter:blur(6px);}
+  .ad-label-before{left:1rem;background:rgba(0,0,0,0.6);color:#fff;}
+  .ad-label-after{right:1rem;background:rgba(201,168,76,0.85);color:#000;}
+  .ad-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);
+    width:3px;background:var(--dourado);z-index:5;cursor:col-resize;}
+  .ad-handle::before{content:'◀ ▶';position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);background:var(--dourado);color:#000;
+    font-size:0.65rem;font-weight:900;padding:0.4rem 0.6rem;border-radius:50px;
+    white-space:nowrap;}
+  .ad-hint{text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.3);
+    margin-top:1rem;letter-spacing:1px;}
+
+  /* ── 5. BTN DOURADO FLUTUANTE ── */
+  .float-gold{position:fixed;bottom:6.5rem;right:2rem;z-index:998;
+    background:var(--dourado);color:#000;text-decoration:none;
+    width:58px;height:58px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;box-shadow:0 6px 24px rgba(201,168,76,0.45);
+    transition:transform 0.2s;animation:pulseGold 2.5s ease-in-out infinite;}
+  .float-gold:hover{transform:scale(1.1);}
+  .float-gold svg{width:26px;height:26px;fill:none;stroke:#000;stroke-width:2.5;}
+  @keyframes pulseGold{0%,100%{box-shadow:0 6px 24px rgba(201,168,76,0.45);}
+    50%{box-shadow:0 6px 36px rgba(201,168,76,0.75);}}
+
+  /* ── 6. DEPOIMENTOS ── */
+  #depoimentos{background:var(--cinza-esc);}
+  .dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.2rem;margin-top:2.5rem;}
+  .dep-card{background:var(--cinza);border:1px solid rgba(255,255,255,0.06);
+    border-radius:14px;padding:1.6rem;position:relative;}
+  .dep-estrelas{color:var(--dourado);font-size:0.85rem;margin-bottom:0.8rem;
+    letter-spacing:2px;}
+  .dep-texto{font-size:0.84rem;color:rgba(255,255,255,0.65);line-height:1.8;
+    margin-bottom:1.2rem;font-style:italic;}
+  .dep-autor{display:flex;align-items:center;gap:0.8rem;}
+  .dep-avatar{width:38px;height:38px;border-radius:50%;background:var(--dourado);
+    display:flex;align-items:center;justify-content:center;font-weight:900;
+    font-size:0.9rem;color:#000;flex-shrink:0;}
+  .dep-nome{font-size:0.82rem;font-weight:800;color:var(--branco);}
+  .dep-data{font-size:0.65rem;color:rgba(255,255,255,0.3);margin-top:1px;}
+  .dep-quote{position:absolute;top:1rem;right:1.2rem;font-size:3rem;
+    color:rgba(201,168,76,0.1);font-family:'Playfair Display',serif;line-height:1;}
+
+  /* ── 7. TEMA CLARO/ESCURO ── */
+  .toggle-tema{background:none;border:1px solid rgba(255,255,255,0.15);
+    border-radius:50px;padding:0.35rem 0.8rem;cursor:pointer;
+    color:rgba(255,255,255,0.6);font-family:'Montserrat',sans-serif;
+    font-size:0.7rem;font-weight:700;letter-spacing:1px;transition:all 0.2s;
+    display:flex;align-items:center;gap:0.4rem;}
+  .toggle-tema:hover{border-color:var(--dourado);color:var(--dourado);}
+
+  [data-tema="claro"]{
+    --preto:#f5f0e8;--cinza-esc:#ede8dc;--cinza:#e0d9cc;--cinza2:#d5cdc0;
+    --branco:#1a1a1a;--dourado:#9a7a2e;--dourado-claro:#b8943a;}
+  [data-tema="claro"] body{background:var(--preto);}
+  [data-tema="claro"] header{background:rgba(245,240,232,0.95);}
+  [data-tema="claro"] nav a{color:rgba(0,0,0,0.6);}
+  [data-tema="claro"] .hero{background:linear-gradient(160deg,#f0ead8,#e8e0cc);}
+  [data-tema="claro"] .hero::before{background:radial-gradient(ellipse at 60% 40%,rgba(154,122,46,0.15) 0%,transparent 65%);}
+  [data-tema="claro"] .hero h1{color:#1a1a1a;}
+  [data-tema="claro"] .hero-sub{color:rgba(0,0,0,0.4);}
+  [data-tema="claro"] .cart-painel{background:#e8e0cc;}
+  [data-tema="claro"] .campo-ag input,[data-tema="claro"] .campo-ag select{color:#1a1a1a;background:rgba(0,0,0,0.05);}
+
+  /* ── 8. MAPA ── */
+  .mapa-wrap{border-radius:16px;overflow:hidden;border:1px solid rgba(201,168,76,0.2);
+    margin-top:2rem;height:300px;}
+  .mapa-wrap iframe{width:100%;height:100%;border:none;display:block;}
+
+  /* ── 9. INSTAGRAM ── */
+  #instagram{background:var(--preto);}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:2.5rem;
+    border-radius:12px;overflow:hidden;}
+  .ig-item{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;}
+  .ig-item img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform 0.3s;}
+  .ig-item:hover img{transform:scale(1.06);}
+  .ig-item-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.5);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity 0.25s;}
+  .ig-item:hover .ig-item-overlay{opacity:1;}
+  .ig-item-overlay span{font-size:0.75rem;font-weight:800;color:#fff;letter-spacing:2px;
+    text-transform:uppercase;}
+  .ig-item.placeholder{background:var(--cinza);
+    display:flex;align-items:center;justify-content:center;}
+  .ig-item.placeholder .ig-ph{font-size:2rem;opacity:0.3;}
+  .ig-cta{display:flex;align-items:center;justify-content:center;margin-top:1.5rem;}
+  .ig-btn{display:inline-flex;align-items:center;gap:0.7rem;
+    border:1px solid rgba(201,168,76,0.4);color:var(--dourado);text-decoration:none;
+    padding:0.8rem 2rem;border-radius:50px;font-weight:700;font-size:0.82rem;
+    letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;}
+  .ig-btn:hover{background:var(--dourado);color:#000;border-color:var(--dourado);}
+
+  /* RESPONSIVO extras */
+  @media(max-width:768px){
+    .contadores{grid-template-columns:1fr 1fr;}
+    .ig-grid{grid-template-columns:repeat(3,1fr);}
+    .float-gold{bottom:7.5rem;}
+  }
+
+  /* ═══════════════════════════════════════════════════════════════
+     ASSINATURAS — 3 PLANOS COMPARATIVOS
+  ═══════════════════════════════════════════════════════════════ */
+  #assinaturas{background:linear-gradient(180deg,#080808 0%,#0d0a04 100%);
+    position:relative;overflow:hidden;}
+  #assinaturas::before{content:'';position:absolute;top:-30%;left:50%;
+    transform:translateX(-50%);width:900px;height:900px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 60%);
+    pointer-events:none;}
+  .planos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+    margin-top:3rem;position:relative;z-index:1;}
+  .plano-card{background:linear-gradient(180deg,#161616 0%,#0d0d0d 100%);
+    border:1px solid rgba(255,255,255,0.07);border-radius:20px;
+    padding:2.5rem 1.8rem;position:relative;overflow:hidden;
+    transition:transform 0.35s cubic-bezier(.4,0,.2,1),border-color 0.3s,box-shadow 0.3s;
+    display:flex;flex-direction:column;}
+  .plano-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,0.3);
+    box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+  .plano-card.destaque{background:linear-gradient(180deg,#1c1608 0%,#0f0a02 100%);
+    border:2px solid var(--dourado);transform:scale(1.04);
+    box-shadow:0 0 40px rgba(201,168,76,0.15);}
+  .plano-card.destaque:hover{transform:scale(1.04) translateY(-8px);}
+  .plano-badge-pop{position:absolute;top:-1px;right:1.5rem;
+    background:var(--dourado);color:#000;font-size:0.6rem;font-weight:900;
+    letter-spacing:2px;text-transform:uppercase;
+    padding:0.45rem 1rem;border-radius:0 0 8px 8px;}
+  .plano-icon{font-size:2.5rem;margin-bottom:1rem;display:block;
+    filter:drop-shadow(0 4px 12px rgba(201,168,76,0.3));}
+  .plano-nome{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;
+    color:var(--branco);margin-bottom:0.3rem;letter-spacing:-0.5px;}
+  .plano-card.destaque .plano-nome{color:var(--dourado);}
+  .plano-tag{font-size:0.62rem;font-weight:800;letter-spacing:3px;
+    text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.5rem;}
+  .plano-card.destaque .plano-tag{color:var(--dourado);}
+  .plano-preco{display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.4rem;}
+  .plano-preco-moeda{font-size:1rem;color:rgba(255,255,255,0.5);
+    font-weight:700;}
+  .plano-preco-num{font-family:'Playfair Display',serif;font-size:3.2rem;
+    font-weight:900;color:var(--dourado);line-height:1;}
+  .plano-preco-cents{font-family:'Playfair Display',serif;font-size:1.4rem;
+    color:var(--dourado);font-weight:700;align-self:flex-start;margin-top:0.4rem;}
+  .plano-preco-periodo{font-size:0.68rem;color:rgba(255,255,255,0.4);
+    font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    margin-bottom:1.8rem;padding-bottom:1.5rem;
+    border-bottom:1px solid rgba(255,255,255,0.06);}
+  .plano-economiza{display:inline-block;background:rgba(37,211,102,0.12);
+    border:1px solid rgba(37,211,102,0.3);border-radius:50px;
+    padding:0.25rem 0.8rem;font-size:0.62rem;font-weight:800;
+    letter-spacing:1.5px;text-transform:uppercase;color:#4ade80;
+    margin-left:0.6rem;}
+  .plano-features{list-style:none;padding:0;margin:0;flex:1;}
+  .plano-features li{display:flex;align-items:flex-start;gap:0.7rem;
+    padding:0.55rem 0;font-size:0.84rem;color:rgba(255,255,255,0.75);
+    line-height:1.4;}
+  .plano-features li svg{width:18px;height:18px;flex-shrink:0;
+    color:var(--dourado);margin-top:1px;}
+  .plano-features li.off{color:rgba(255,255,255,0.25);}
+  .plano-features li.off svg{color:rgba(255,255,255,0.2);}
+  .plano-features li strong{color:var(--branco);font-weight:800;}
+  .plano-card.destaque .plano-features li{color:rgba(255,255,255,0.9);}
+  .plano-btn{display:flex;align-items:center;justify-content:center;gap:0.6rem;
+    margin-top:1.8rem;background:rgba(255,255,255,0.04);
+    color:var(--branco);border:1px solid rgba(255,255,255,0.15);
+    text-decoration:none;padding:1rem;border-radius:12px;
+    font-weight:800;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;
+    transition:all 0.25s;cursor:pointer;}
+  .plano-btn:hover{background:var(--dourado);color:#000;border-color:var(--dourado);
+    transform:translateY(-2px);}
+  .plano-card.destaque .plano-btn{background:var(--dourado);color:#000;
+    border-color:var(--dourado);}
+  .plano-card.destaque .plano-btn:hover{background:var(--dourado-claro);
+    box-shadow:0 8px 24px rgba(201,168,76,0.45);}
+
+  /* ═══════════════════════════════════════════════════════════════
+     WIZARD DE AGENDAMENTO — DISRUPTIVO 4 ETAPAS
+  ═══════════════════════════════════════════════════════════════ */
+  #wizard-section{background:linear-gradient(180deg,#0a0a0a 0%,#080808 100%);
+    position:relative;overflow:hidden;border-top:1px solid rgba(201,168,76,0.1);
+    border-bottom:1px solid rgba(201,168,76,0.1);}
+  #wizard-section::before{content:'';position:absolute;top:20%;right:-10%;
+    width:600px;height:600px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);
+    pointer-events:none;}
+  #wizard-section::after{content:'';position:absolute;bottom:10%;left:-10%;
+    width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(37,211,102,0.04) 0%,transparent 70%);
+    pointer-events:none;}
+  .wizard-wrap{max-width:920px;margin:0 auto;position:relative;z-index:1;}
+
+  /* progresso */
+  .wz-progress{display:flex;align-items:center;justify-content:center;
+    gap:0;margin:3rem 0 2.5rem;padding:0 1rem;}
+  .wz-step-dot{display:flex;flex-direction:column;align-items:center;
+    gap:0.6rem;position:relative;flex-shrink:0;}
+  .wz-step-circle{width:44px;height:44px;border-radius:50%;
+    background:#161616;border:2px solid rgba(255,255,255,0.1);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:0.95rem;color:rgba(255,255,255,0.4);
+    transition:all 0.35s cubic-bezier(.4,0,.2,1);position:relative;z-index:2;}
+  .wz-step-label{font-size:0.6rem;font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;color:rgba(255,255,255,0.3);
+    transition:color 0.3s;white-space:nowrap;}
+  .wz-step-line{flex:1;height:2px;background:rgba(255,255,255,0.08);
+    margin:0 -2px;margin-bottom:1.8rem;position:relative;overflow:hidden;}
+  .wz-step-line::after{content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,var(--dourado),var(--dourado-claro));
+    transform:scaleX(0);transform-origin:left;transition:transform 0.5s ease;}
+  .wz-step-dot.active .wz-step-circle{background:var(--dourado);color:#000;
+    border-color:var(--dourado);box-shadow:0 0 0 6px rgba(201,168,76,0.15);}
+  .wz-step-dot.active .wz-step-label{color:var(--dourado);}
+  .wz-step-dot.done .wz-step-circle{background:var(--dourado);color:#000;
+    border-color:var(--dourado);}
+  .wz-step-dot.done .wz-step-label{color:rgba(255,255,255,0.6);}
+  .wz-step-line.done::after{transform:scaleX(1);}
+
+  /* container das telas */
+  .wz-container{background:linear-gradient(180deg,rgba(20,20,20,0.7),rgba(10,10,10,0.9));
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(201,168,76,0.15);
+    border-radius:24px;padding:3rem 2.5rem;
+    min-height:560px;display:flex;flex-direction:column;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);}
+  .wz-screen{display:none;flex-direction:column;flex:1;
+    animation:wzFadeIn 0.45s cubic-bezier(.4,0,.2,1);}
+  .wz-screen.ativa{display:flex;}
+  @keyframes wzFadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .wz-screen-titulo{font-family:'Playfair Display',serif;font-size:1.7rem;
+    font-weight:900;color:var(--branco);margin-bottom:0.4rem;letter-spacing:-0.5px;}
+  .wz-screen-titulo span{color:var(--dourado);}
+  .wz-screen-sub{font-size:0.78rem;color:rgba(255,255,255,0.45);
+    letter-spacing:1.5px;text-transform:uppercase;font-weight:700;
+    margin-bottom:2rem;}
+
+  /* CARDS SELECIONÁVEIS (etapas 1, 2) */
+  .wz-grid{display:grid;gap:1rem;}
+  .wz-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+  .wz-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+  .wz-grid.cols-4{grid-template-columns:repeat(4,1fr);}
+  .wz-card{background:rgba(255,255,255,0.03);border:1.5px solid rgba(255,255,255,0.08);
+    border-radius:14px;padding:1.4rem 1.2rem;cursor:pointer;
+    transition:all 0.25s;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;gap:0.5rem;}
+  .wz-card::before{content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);
+    opacity:0;transition:opacity 0.25s;pointer-events:none;}
+  .wz-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,0.4);}
+  .wz-card:hover::before{opacity:1;}
+  .wz-card.sel{border-color:var(--dourado);background:rgba(201,168,76,0.08);
+    box-shadow:0 8px 24px rgba(201,168,76,0.15);}
+  .wz-card.sel::after{content:'✓';position:absolute;top:0.8rem;right:0.8rem;
+    width:24px;height:24px;background:var(--dourado);color:#000;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:0.8rem;font-weight:900;}
+  .wz-card-icon{font-size:1.8rem;}
+  .wz-card-nome{font-size:0.88rem;font-weight:800;color:var(--branco);
+    line-height:1.2;}
+  .wz-card-desc{font-size:0.7rem;color:rgba(255,255,255,0.45);line-height:1.4;
+    font-weight:500;}
+  .wz-card-preco{font-family:'Playfair Display',serif;font-size:1.2rem;
+    font-weight:900;color:var(--dourado);margin-top:auto;padding-top:0.5rem;}
+  .wz-card-badge{position:absolute;top:0.8rem;left:0.8rem;
+    background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);
+    color:var(--dourado);font-size:0.55rem;font-weight:800;letter-spacing:1.5px;
+    padding:0.2rem 0.6rem;border-radius:50px;text-transform:uppercase;}
+
+  /* CALENDÁRIO (etapa 3) */
+  .wz-calendario{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;}
+  .wz-cal-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;padding:1.5rem;}
+  .wz-cal-header{display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:1.5rem;}
+  .wz-cal-mes{font-family:'Playfair Display',serif;font-size:1.2rem;
+    font-weight:900;color:var(--branco);text-transform:capitalize;}
+  .wz-cal-nav{display:flex;gap:0.5rem;}
+  .wz-cal-nav button{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+    color:var(--branco);width:34px;height:34px;border-radius:8px;cursor:pointer;
+    font-size:0.9rem;transition:all 0.2s;display:flex;align-items:center;justify-content:center;}
+  .wz-cal-nav button:hover{background:var(--dourado);color:#000;border-color:var(--dourado);}
+  .wz-cal-nav button:disabled{opacity:0.3;cursor:not-allowed;}
+  .wz-cal-dias-semana{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;
+    margin-bottom:8px;}
+  .wz-cal-dias-semana div{text-align:center;font-size:0.58rem;font-weight:800;
+    letter-spacing:1px;color:rgba(255,255,255,0.35);text-transform:uppercase;
+    padding:0.4rem 0;}
+  .wz-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+  .wz-cal-dia{aspect-ratio:1;background:rgba(255,255,255,0.03);border:1px solid transparent;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;
+    font-size:0.8rem;font-weight:700;color:var(--branco);cursor:pointer;
+    transition:all 0.2s;position:relative;}
+  .wz-cal-dia:hover:not(.off):not(.sel){background:rgba(201,168,76,0.12);
+    border-color:rgba(201,168,76,0.3);}
+  .wz-cal-dia.off{color:rgba(255,255,255,0.15);cursor:not-allowed;background:transparent;}
+  .wz-cal-dia.hoje{border-color:rgba(201,168,76,0.4);}
+  .wz-cal-dia.sel{background:var(--dourado);color:#000;font-weight:900;
+    box-shadow:0 4px 12px rgba(201,168,76,0.3);}
+  .wz-cal-dia.empty{background:transparent;cursor:default;}
+
+  .wz-horarios-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;}
+  .wz-horarios-titulo{font-size:0.65rem;font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;color:var(--dourado);margin-bottom:1rem;
+    padding-bottom:0.8rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+  .wz-horarios-data{font-size:0.78rem;color:rgba(255,255,255,0.55);margin-bottom:1rem;
+    font-weight:600;}
+  .wz-horarios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;
+    overflow-y:auto;max-height:340px;padding-right:0.3rem;}
+  .wz-horarios-grid::-webkit-scrollbar{width:4px;}
+  .wz-horarios-grid::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
+  .wz-hora-btn{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+    color:var(--branco);padding:0.65rem;border-radius:8px;cursor:pointer;
+    font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;
+    transition:all 0.2s;}
+  .wz-hora-btn:hover{background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.4);
+    color:var(--dourado);}
+  .wz-hora-btn.sel{background:var(--dourado);color:#000;border-color:var(--dourado);
+    font-weight:900;}
+  .wz-horarios-vazio{font-size:0.75rem;color:rgba(255,255,255,0.3);text-align:center;
+    padding:3rem 1rem;font-style:italic;line-height:1.6;}
+
+  /* CONFIRMAÇÃO (etapa 4) */
+  .wz-confirm-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .wz-confirm-form{display:flex;flex-direction:column;gap:1rem;}
+  .wz-input-grupo label{display:block;font-size:0.62rem;font-weight:800;
+    letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);
+    margin-bottom:0.4rem;}
+  .wz-input-grupo input,.wz-input-grupo textarea{width:100%;
+    background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.1);
+    border-radius:10px;padding:0.85rem 1rem;color:var(--branco);
+    font-family:'Montserrat',sans-serif;font-size:0.88rem;font-weight:600;
+    outline:none;transition:all 0.2s;}
+  .wz-input-grupo input:focus,.wz-input-grupo textarea:focus{
+    border-color:var(--dourado);background:rgba(201,168,76,0.05);}
+  .wz-input-grupo textarea{min-height:80px;resize:vertical;font-family:'Montserrat',sans-serif;}
+
+  .wz-resumo{background:linear-gradient(180deg,rgba(201,168,76,0.06),rgba(201,168,76,0.02));
+    border:1px solid rgba(201,168,76,0.2);border-radius:16px;padding:1.5rem;
+    display:flex;flex-direction:column;gap:0.9rem;}
+  .wz-resumo-titulo{font-size:0.6rem;font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;color:var(--dourado);
+    padding-bottom:0.8rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+  .wz-resumo-linha{display:flex;justify-content:space-between;align-items:flex-start;
+    gap:1rem;font-size:0.78rem;}
+  .wz-resumo-label{color:rgba(255,255,255,0.45);font-weight:700;
+    letter-spacing:1px;text-transform:uppercase;font-size:0.62rem;
+    flex-shrink:0;padding-top:2px;}
+  .wz-resumo-valor{color:var(--branco);font-weight:700;text-align:right;}
+  .wz-resumo-valor.gold{color:var(--dourado);font-family:'Playfair Display',serif;
+    font-size:1.4rem;font-weight:900;}
+  .wz-resumo-divider{height:1px;background:rgba(201,168,76,0.15);margin:0.3rem 0;}
+
+  /* PIX */
+  .wz-pix{background:rgba(255,255,255,0.02);border:1px dashed rgba(201,168,76,0.3);
+    border-radius:14px;padding:1.3rem;margin-top:1rem;}
+  .wz-pix-toggle{display:flex;align-items:center;gap:0.7rem;cursor:pointer;
+    user-select:none;}
+  .wz-pix-toggle-switch{width:40px;height:22px;background:rgba(255,255,255,0.1);
+    border-radius:50px;position:relative;transition:background 0.2s;flex-shrink:0;}
+  .wz-pix-toggle-switch::after{content:'';position:absolute;top:3px;left:3px;
+    width:16px;height:16px;background:#fff;border-radius:50%;
+    transition:transform 0.25s cubic-bezier(.4,0,.2,1);}
+  .wz-pix-toggle.on .wz-pix-toggle-switch{background:var(--dourado);}
+  .wz-pix-toggle.on .wz-pix-toggle-switch::after{transform:translateX(18px);background:#000;}
+  .wz-pix-toggle-label{font-size:0.78rem;font-weight:800;color:var(--branco);
+    letter-spacing:1px;}
+  .wz-pix-toggle-sub{font-size:0.62rem;color:rgba(255,255,255,0.4);
+    margin-top:2px;font-weight:600;}
+  .wz-pix-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
+  .wz-pix.on .wz-pix-body{max-height:600px;}
+  .wz-pix-conteudo{padding-top:1.2rem;display:flex;gap:1.2rem;align-items:flex-start;
+    flex-wrap:wrap;}
+  .wz-pix-qr{background:#fff;border-radius:12px;padding:8px;flex-shrink:0;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);}
+  .wz-pix-qr img{display:block;width:140px;height:140px;}
+  .wz-pix-info{flex:1;min-width:200px;}
+  .wz-pix-info p{font-size:0.72rem;color:rgba(255,255,255,0.6);line-height:1.6;
+    margin-bottom:0.7rem;}
+  .wz-pix-valor-grupo{display:flex;gap:0.5rem;margin-bottom:0.8rem;}
+  .wz-pix-valor-grupo input{flex:1;}
+  .wz-copia-cola{background:rgba(0,0,0,0.4);border:1px solid rgba(201,168,76,0.2);
+    border-radius:8px;padding:0.6rem 0.8rem;font-family:'Courier New',monospace;
+    font-size:0.62rem;color:rgba(255,255,255,0.5);
+    word-break:break-all;line-height:1.4;max-height:60px;overflow:hidden;
+    position:relative;cursor:pointer;}
+  .wz-copia-btn{margin-top:0.5rem;background:rgba(201,168,76,0.1);
+    border:1px solid rgba(201,168,76,0.3);color:var(--dourado);
+    padding:0.5rem 1rem;border-radius:8px;cursor:pointer;width:100%;
+    font-size:0.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+    transition:all 0.2s;font-family:'Montserrat',sans-serif;}
+  .wz-copia-btn:hover{background:var(--dourado);color:#000;}
+  .wz-copia-btn.copiado{background:#22c55e;color:#fff;border-color:#22c55e;}
+
+  /* navegação wizard */
+  .wz-nav{display:flex;justify-content:space-between;align-items:center;
+    gap:1rem;margin-top:2rem;padding-top:1.5rem;
+    border-top:1px solid rgba(255,255,255,0.06);}
+  .wz-btn{display:inline-flex;align-items:center;gap:0.5rem;
+    padding:0.95rem 1.8rem;border-radius:12px;font-family:'Montserrat',sans-serif;
+    font-size:0.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;
+    cursor:pointer;transition:all 0.25s;border:none;text-decoration:none;}
+  .wz-btn-voltar{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);
+    border:1px solid rgba(255,255,255,0.1);}
+  .wz-btn-voltar:hover{background:rgba(255,255,255,0.1);color:var(--branco);}
+  .wz-btn-voltar:disabled{opacity:0.3;cursor:not-allowed;}
+  .wz-btn-prox{background:linear-gradient(135deg,var(--dourado),var(--dourado-claro));
+    color:#000;box-shadow:0 8px 24px rgba(201,168,76,0.3);}
+  .wz-btn-prox:hover:not(:disabled){transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(201,168,76,0.5);}
+  .wz-btn-prox:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none;}
+  .wz-btn-final{background:linear-gradient(135deg,#25D366,#1ebe5d);color:#fff;
+    box-shadow:0 8px 24px rgba(37,211,102,0.4);}
+  .wz-btn-final:hover:not(:disabled){transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(37,211,102,0.6);}
+
+  /* tela final SUCESSO */
+  .wz-sucesso{display:none;text-align:center;padding:2rem 0;}
+  .wz-sucesso.show{display:block;animation:wzFadeIn 0.5s ease;}
+  .wz-sucesso-icon{width:80px;height:80px;border-radius:50%;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;
+    box-shadow:0 12px 40px rgba(34,197,94,0.35);
+    animation:bounceIn 0.6s cubic-bezier(.5,.1,.3,1.5);}
+  .wz-sucesso-icon svg{width:42px;height:42px;color:#fff;}
+  @keyframes bounceIn{
+    0%{transform:scale(0);opacity:0;}
+    60%{transform:scale(1.15);opacity:1;}
+    100%{transform:scale(1);}
+  }
+
+  /* responsivo wizard */
+  @media(max-width:768px){
+    .planos-grid{grid-template-columns:1fr;}
+    .plano-card.destaque{transform:scale(1);}
+    .plano-card.destaque:hover{transform:translateY(-8px);}
+    .wz-container{padding:1.8rem 1.2rem;}
+    .wz-step-label{display:none;}
+    .wz-grid.cols-3,.wz-grid.cols-4{grid-template-columns:repeat(2,1fr);}
+    .wz-calendario,.wz-confirm-grid{grid-template-columns:1fr;}
+    .wz-horarios-grid{max-height:240px;}
+    .wz-screen-titulo{font-size:1.3rem;}
+    .wz-btn{padding:0.85rem 1.3rem;font-size:0.7rem;}
+    .wz-pix-conteudo{flex-direction:column;align-items:center;text-align:center;}
+  }
+
+</style>
+</head>
+<body>
+
+<!-- 1. BANNER PROMO -->
+<div class="promo-bar" id="promo-bar">
+  🔥 Plano Premium por <strong>R$ 149,90/mês</strong> — corte + barba + sobrancelha semanal · vagas limitadas!
+  <a href="#assinaturas">Ver planos</a>
+  <button class="promo-fechar" onclick="document.body.classList.add('promo-off')" aria-label="Fechar">✕</button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-nav">
+    <img src="images/logo.jpg" alt="Barbearia Arantes"/>
+  </div>
+  <nav>
+    <a href="#fotos">Fotos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#assinaturas">Planos</a>
+    <a href="#horarios">Horários</a>
+    <button class="cart-btn" onclick="abrirCarrinho()" aria-label="Carrinho">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Carrinho
+      <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+    <button class="toggle-tema" onclick="toggleTema()" id="btn-tema" title="Alternar tema">🌙 Tema</button>
+    <a href="#wizard-section" class="nav-cta">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-deco"></div>
+  <img src="images/foto-equipe.jpg" class="hero-video" alt="Equipe Barbearia Arantes" style="object-fit:cover;"/>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-inner">
+    <img src="images/logo2.png" alt="Barbearia Arantes" class="hero-logo"/>
+    <div class="hero-badge">✂️ Homens de Estilo · Goiânia – GO</div>
+    <h1>Onde o Estilo<br/><span>Encontra o Respeito</span></h1>
+    <p class="hero-sub">Presença · Confiança · Agilidade</p>
+    <div class="hero-btns">
+      <a href="#wizard-section" class="btn-agendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="12" cy="16" r="2" fill="currentColor"/>
+        </svg>
+        Agendar Online Agora
+      </a>
+      <a href="#assinaturas" class="btn-outline">Ver Planos</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. CONTADORES ANIMADOS -->
+<section id="numeros" style="background:var(--cinza-esc);padding:4rem 2rem;">
+  <div class="sec-inner">
+    <div class="contadores" id="cnt-wrap">
+      <div class="cnt-card">
+        <div class="cnt-num" data-target="2400">0</div>
+        <div class="cnt-label">Clientes Atendidos</div>
+      </div>
+      <div class="cnt-card">
+        <div class="cnt-num" data-target="7">0</div>
+        <div class="cnt-label">Anos de Estilo</div>
+      </div>
+      <div class="cnt-card">
+        <div class="cnt-num" data-target="12">0</div>
+        <div class="cnt-label">Serviços Disponíveis</div>
+      </div>
+      <div class="cnt-card">
+        <div class="cnt-num" data-target="100">0</div>
+        <div class="cnt-label">% Satisfação</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="fotos">
+  <div class="sec-inner">
+    <span class="sec-tag">Nossa Barbearia</span>
+    <h2 class="sec-titulo">Ambiente &amp; <span>Estilo</span></h2>
+    <div class="divisor"></div>
+    <div class="galeria-grid">
+      <div class="gal-item grande">
+        <img src="images/foto-ambiente.jpg" alt="Interior Barbearia Arantes — espelhos iluminados"/>
+      </div>
+      <div class="gal-item">
+        <img src="images/foto-corte1.jpg" alt="Corte degradê clássico"/>
+      </div>
+      <div class="gal-item">
+        <img src="images/foto-tranca.jpg" alt="Trança com degradê artístico"/>
+      </div>
+      <div class="gal-item">
+        <img src="images/foto-platinado.jpg" alt="Coloração platinada com riscos"/>
+      </div>
+      <div class="gal-item">
+        <img src="images/foto-cacheado.jpg" alt="Corte cacheado com fade"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="sec-inner">
+    <span class="sec-tag">O que oferecemos</span>
+    <h2 class="sec-titulo">Nossos <span>Serviços</span></h2>
+    <div class="divisor"></div>
+    <div class="servicos-grid">
+      <div class="serv-card">
+        <span class="serv-icon">✂️🪒</span>
+        <div class="serv-nome">Corte + Barba</div>
+        <div class="serv-desc">Combo completo — corte e barba com acabamento impecável. O favorito da galera.</div>
+        <div class="serv-preco">R$ 70</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">⚡</span>
+        <div class="serv-nome">Corte Degradê Navalhado</div>
+        <div class="serv-desc">Degradê na navalha com precisão total. Acabamento afiado do jeito que você merece.</div>
+        <div class="serv-preco">R$ 40</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">✂️</span>
+        <div class="serv-nome">Corte Masculino</div>
+        <div class="serv-desc">Tradicional ou moderno, com lavagem e finalização. Do simples ao mais elaborado.</div>
+        <div class="serv-preco">Consulte</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">👦</span>
+        <div class="serv-nome">Corte Infantil</div>
+        <div class="serv-desc">Atendimento especial para os pequenos, com paciência, cuidado e carinho.</div>
+        <div class="serv-preco">Consulte</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">🪒</span>
+        <div class="serv-nome">Barba</div>
+        <div class="serv-desc">Desenho, alinhamento e hidratação com toalha quente e produtos de qualidade.</div>
+        <div class="serv-preco">Consulte</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">💇</span>
+        <div class="serv-nome">Escovado</div>
+        <div class="serv-desc">Escova modeladora com acabamento liso e brilhante para um visual elegante.</div>
+        <div class="serv-preco">R$ 180</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">✨</span>
+        <div class="serv-nome">Luzes</div>
+        <div class="serv-desc">Mechas e luzes com técnicas modernas para valorizar o seu estilo.</div>
+        <div class="serv-preco">R$ 90 <small>em diante</small></div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">💧</span>
+        <div class="serv-nome">Hidratação</div>
+        <div class="serv-desc">Tratamento profundo para cabelos ressecados e sem vida. Devolvendo saúde e brilho.</div>
+        <div class="serv-preco">R$ 35</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">🧴</span>
+        <div class="serv-nome">Relaxamento / Alisamento</div>
+        <div class="serv-desc">Redução de volume e frizz com resultado duradouro e cabelo macio.</div>
+        <div class="serv-preco">R$ 40</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">🎨</span>
+        <div class="serv-nome">Tintura</div>
+        <div class="serv-desc">Cobertura de brancos ou mudança de cor com produtos de qualidade profissional.</div>
+        <div class="serv-preco">R$ 40</div>
+      </div>
+      <div class="serv-card">
+        <span class="serv-icon">💈</span>
+        <div class="serv-nome">Penteado</div>
+        <div class="serv-desc">Penteados para ocasiões especiais ou para o dia a dia com muito estilo.</div>
+        <div class="serv-preco">R$ 20</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.7rem;color:rgba(255,255,255,0.25);letter-spacing:1px;">
+      * Valores sujeitos a alteração. Confirme pelo WhatsApp.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SEÇÃO ASSINATURAS — 3 PLANOS COMPARATIVOS
+════════════════════════════════════════════ -->
+<section id="assinaturas">
+  <div class="sec-inner">
+    <span class="sec-tag" style="text-align:center;display:block;">Clube de Assinaturas</span>
+    <h2 class="sec-titulo" style="text-align:center;">Visual Impecável,<br/>Todo <span>Mês</span></h2>
+    <div class="divisor" style="margin:1.2rem auto 0.8rem;"></div>
+    <p style="text-align:center;font-size:0.88rem;color:rgba(255,255,255,0.5);max-width:560px;margin:0 auto 1rem;line-height:1.7;">
+      4 atendimentos por mês — 1 por semana. Sem filas, sem stress.<br/>
+      <strong style="color:var(--dourado);">Cancele quando quiser.</strong>
+    </p>
+    <div class="planos-grid">
+
+      <!-- BASIC -->
+      <div class="plano-card">
+        <span class="plano-icon">💈</span>
+        <div class="plano-nome">Basic</div>
+        <div class="plano-tag">Manutenção semanal</div>
+        <div class="plano-preco">
+          <span class="plano-preco-moeda">R$</span>
+          <span class="plano-preco-num">69</span>
+          <span class="plano-preco-cents">,90</span>
+        </div>
+        <div class="plano-preco-periodo">por mês · 4 atendimentos</div>
+        <ul class="plano-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Corte</strong> semanal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Segunda a sexta</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>4 visitas / mês</span></li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Barba</span></li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Sobrancelha</span></li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Prioridade</span></li>
+        </ul>
+        <button class="plano-btn" onclick="assinarPlano('Basic','69,90')">Assinar Basic</button>
+      </div>
+
+      <!-- PREMIUM (destaque) -->
+      <div class="plano-card destaque">
+        <span class="plano-badge-pop">★ Mais Pedido</span>
+        <span class="plano-icon">👑</span>
+        <div class="plano-nome">Premium</div>
+        <div class="plano-tag">A escolha de quem manda</div>
+        <div class="plano-preco">
+          <span class="plano-preco-moeda">R$</span>
+          <span class="plano-preco-num">149</span>
+          <span class="plano-preco-cents">,90</span>
+        </div>
+        <div class="plano-preco-periodo">por mês · 4 atendimentos<span class="plano-economiza">Economize 40%</span></div>
+        <ul class="plano-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Corte</strong> semanal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Barba</strong> semanal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Sobrancelha</strong> semanal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Segunda a <strong>sábado</strong></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>⚡ Prioridade</strong> no agendamento</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>4 visitas / mês</span></li>
+        </ul>
+        <button class="plano-btn" onclick="assinarPlano('Premium','149,90')">Assinar Premium</button>
+      </div>
+
+      <!-- PLUS -->
+      <div class="plano-card">
+        <span class="plano-icon">⭐</span>
+        <div class="plano-nome">Plus</div>
+        <div class="plano-tag">Corte + sobrancelha alinhados</div>
+        <div class="plano-preco">
+          <span class="plano-preco-moeda">R$</span>
+          <span class="plano-preco-num">89</span>
+          <span class="plano-preco-cents">,90</span>
+        </div>
+        <div class="plano-preco-periodo">por mês · 4 atendimentos</div>
+        <ul class="plano-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Corte</strong> semanal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Sobrancelha</strong> semanal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Segunda a sexta</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>4 visitas / mês</span></li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Barba</span></li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Prioridade</span></li>
+        </ul>
+        <button class="plano-btn" onclick="assinarPlano('Plus','89,90')">Assinar Plus</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     WIZARD DE AGENDAMENTO — 4 ETAPAS DISRUPTIVO
+════════════════════════════════════════════ -->
+<section id="wizard-section">
+  <div class="sec-inner">
+    <span class="sec-tag" style="text-align:center;display:block;">⚡ Agendamento Online</span>
+    <h2 class="sec-titulo" style="text-align:center;">Reserve em <span>4 Passos</span></h2>
+    <div class="divisor" style="margin:1.2rem auto 0.8rem;"></div>
+    <p style="text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto 1rem;">
+      Sem cadastro, sem app — só você, seu horário e o seu barbeiro favorito.
+    </p>
+
+    <div class="wizard-wrap">
+
+      <!-- PROGRESS BAR -->
+      <div class="wz-progress">
+        <div class="wz-step-dot active" data-step="1">
+          <div class="wz-step-circle">1</div>
+          <div class="wz-step-label">Serviço</div>
+        </div>
+        <div class="wz-step-line" data-line="1-2"></div>
+        <div class="wz-step-dot" data-step="2">
+          <div class="wz-step-circle">2</div>
+          <div class="wz-step-label">Barbeiro</div>
+        </div>
+        <div class="wz-step-line" data-line="2-3"></div>
+        <div class="wz-step-dot" data-step="3">
+          <div class="wz-step-circle">3</div>
+          <div class="wz-step-label">Data &amp; Hora</div>
+        </div>
+        <div class="wz-step-line" data-line="3-4"></div>
+        <div class="wz-step-dot" data-step="4">
+          <div class="wz-step-circle">4</div>
+          <div class="wz-step-label">Confirmar</div>
+        </div>
+      </div>
+
+      <!-- CONTAINER -->
+      <div class="wz-container">
+
+        <!-- ── ETAPA 1: SERVIÇO ── -->
+        <div class="wz-screen ativa" data-screen="1">
+          <div class="wz-screen-titulo">Qual é o <span>serviço</span> de hoje?</div>
+          <div class="wz-screen-sub">Pode escolher mais de um · marque tudo que quer fazer</div>
+          <div class="wz-grid cols-3" id="wz-servicos-grid">
+            <!-- gerado por JS -->
+          </div>
+        </div>
+
+        <!-- ── ETAPA 2: BARBEIRO ── -->
+        <div class="wz-screen" data-screen="2">
+          <div class="wz-screen-titulo">Escolha o seu <span>barbeiro</span></div>
+          <div class="wz-screen-sub">Cada um com seu estilo · escolha sua preferência</div>
+          <div class="wz-grid cols-4">
+            <div class="wz-card" data-barbeiro="Gabriel Aguiar" onclick="selecionarBarbeiro(this)">
+              <span class="wz-card-icon">💈</span>
+              <div class="wz-card-nome">Gabriel Aguiar</div>
+              <div class="wz-card-desc">Degradê &amp; cortes modernos</div>
+            </div>
+            <div class="wz-card" data-barbeiro="Elias Gomes" onclick="selecionarBarbeiro(this)">
+              <span class="wz-card-icon">🪒</span>
+              <div class="wz-card-nome">Elias Gomes</div>
+              <div class="wz-card-desc">Barba clássica &amp; acabamento</div>
+            </div>
+            <div class="wz-card" data-barbeiro="Iranilson Nogueira" onclick="selecionarBarbeiro(this)">
+              <span class="wz-card-icon">✂️</span>
+              <div class="wz-card-nome">Iranilson Nogueira</div>
+              <div class="wz-card-desc">Tratamentos &amp; colorimetria</div>
+            </div>
+            <div class="wz-card" data-barbeiro="Sem preferência" onclick="selecionarBarbeiro(this)">
+              <span class="wz-card-icon">🎲</span>
+              <div class="wz-card-nome">Sem preferência</div>
+              <div class="wz-card-desc">Atendido pelo primeiro disponível</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── ETAPA 3: DATA + HORA ── -->
+        <div class="wz-screen" data-screen="3">
+          <div class="wz-screen-titulo">Quando vai <span>aparecer?</span></div>
+          <div class="wz-screen-sub">Escolha o dia e o horário · funcionamos todos os dias</div>
+          <div class="wz-calendario">
+            <div class="wz-cal-box">
+              <div class="wz-cal-header">
+                <div class="wz-cal-mes" id="wz-cal-mes"></div>
+                <div class="wz-cal-nav">
+                  <button id="wz-cal-prev" onclick="navegarMes(-1)" aria-label="Mês anterior">‹</button>
+                  <button id="wz-cal-next" onclick="navegarMes(1)" aria-label="Próximo mês">›</button>
+                </div>
+              </div>
+              <div class="wz-cal-dias-semana">
+                <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+              </div>
+              <div class="wz-cal-grid" id="wz-cal-grid"></div>
+            </div>
+            <div class="wz-horarios-box">
+              <div class="wz-horarios-titulo">⏰ Horário disponível</div>
+              <div class="wz-horarios-data" id="wz-horarios-data">Selecione um dia primeiro</div>
+              <div class="wz-horarios-grid" id="wz-horarios-grid">
+                <div class="wz-horarios-vazio">Escolha uma data no calendário<br/>para ver os horários disponíveis ⤴</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── ETAPA 4: CONFIRMAR ── -->
+        <div class="wz-screen" data-screen="4">
+          <div class="wz-screen-titulo">Quase lá! <span>Confirme</span> seus dados</div>
+          <div class="wz-screen-sub">Os dados são enviados direto pro WhatsApp da barbearia</div>
+          <div class="wz-confirm-grid">
+
+            <!-- FORM -->
+            <div class="wz-confirm-form">
+              <div class="wz-input-grupo">
+                <label for="wz-nome">Seu nome completo *</label>
+                <input type="text" id="wz-nome" placeholder="Ex: João da Silva" required/>
+              </div>
+              <div class="wz-input-grupo">
+                <label for="wz-tel">WhatsApp / Telefone *</label>
+                <input type="tel" id="wz-tel" placeholder="(62) 99999-9999" required/>
+              </div>
+              <div class="wz-input-grupo">
+                <label for="wz-obs">Observações (opcional)</label>
+                <textarea id="wz-obs" placeholder="Algo que o barbeiro precisa saber? Ex: 'cabelo molhado, traz tudo curto'"></textarea>
+              </div>
+
+              <!-- PIX OPCIONAL -->
+              <div class="wz-pix" id="wz-pix-box">
+                <div class="wz-pix-toggle" id="wz-pix-toggle" onclick="togglePix()">
+                  <div class="wz-pix-toggle-switch"></div>
+                  <div>
+                    <div class="wz-pix-toggle-label">💸 Adiantar via PIX</div>
+                    <div class="wz-pix-toggle-sub">Opcional · você escolhe quanto pagar agora</div>
+                  </div>
+                </div>
+                <div class="wz-pix-body">
+                  <div class="wz-pix-conteudo">
+                    <div class="wz-pix-qr">
+                      <img src="images/pix-qrcode.jpeg" alt="QR Code PIX Barbearia Arantes"/>
+                    </div>
+                    <div class="wz-pix-info">
+                      <p>Pague pelo app do seu banco — escaneie o QR ou copie a chave abaixo.</p>
+                      <div class="wz-input-grupo" style="margin-bottom:0.7rem;">
+                        <label for="wz-pix-valor">Valor (R$)</label>
+                        <input type="text" id="wz-pix-valor" placeholder="Ex: 20,00" inputmode="decimal"/>
+                      </div>
+                      <div class="wz-copia-cola" id="wz-pix-codigo">00020101021126790014BR.GOV.BCB.PIX2557pix-qr.mercadopago.com/instore/ol/v2/rYraTnb7cyuEvnVoK4035204000053039865802BR5917BARBEARIA ARANTES6009SAO PAULO62080504mpis6304A86C</div>
+                      <button class="wz-copia-btn" id="wz-copia-btn" onclick="copiarPix()">📋 Copiar código PIX</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESUMO -->
+            <div>
+              <div class="wz-resumo">
+                <div class="wz-resumo-titulo">📋 Resumo do agendamento</div>
+                <div class="wz-resumo-linha">
+                  <span class="wz-resumo-label">Serviços</span>
+                  <span class="wz-resumo-valor" id="rs-servicos">—</span>
+                </div>
+                <div class="wz-resumo-linha">
+                  <span class="wz-resumo-label">Barbeiro</span>
+                  <span class="wz-resumo-valor" id="rs-barbeiro">—</span>
+                </div>
+                <div class="wz-resumo-linha">
+                  <span class="wz-resumo-label">Data</span>
+                  <span class="wz-resumo-valor" id="rs-data">—</span>
+                </div>
+                <div class="wz-resumo-linha">
+                  <span class="wz-resumo-label">Horário</span>
+                  <span class="wz-resumo-valor" id="rs-hora">—</span>
+                </div>
+                <div class="wz-resumo-divider"></div>
+                <div class="wz-resumo-linha">
+                  <span class="wz-resumo-label">Total estimado</span>
+                  <span class="wz-resumo-valor gold" id="rs-total">R$ 0,00</span>
+                </div>
+                <p style="font-size:0.62rem;color:rgba(255,255,255,0.35);text-align:right;margin-top:-0.3rem;">* Pagamento na barbearia ou via PIX adiantado</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── TELA SUCESSO ── -->
+        <div class="wz-sucesso" id="wz-sucesso">
+          <div class="wz-sucesso-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--branco);margin-bottom:0.5rem;">
+            Pedido <span style="color:var(--dourado);">enviado!</span>
+          </h3>
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);max-width:440px;margin:0 auto 1.5rem;line-height:1.7;">
+            Te redirecionamos pro WhatsApp da barbearia. Aguarde a confirmação do barbeiro — geralmente respondem em até 15 minutos.
+          </p>
+          <button class="wz-btn wz-btn-prox" onclick="reiniciarWizard()">Fazer novo agendamento</button>
+        </div>
+
+        <!-- NAVEGAÇÃO -->
+        <div class="wz-nav" id="wz-nav">
+          <button class="wz-btn wz-btn-voltar" id="wz-btn-voltar" onclick="navegarWizard(-1)" disabled>‹ Voltar</button>
+          <button class="wz-btn wz-btn-prox" id="wz-btn-prox" onclick="navegarWizard(1)" disabled>Próximo ›</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ANTES/DEPOIS -->
+<section id="antes-depois">
+  <div class="sec-inner">
+    <span class="sec-tag">Transformações</span>
+    <h2 class="sec-titulo">Antes &amp; <span>Depois</span></h2>
+    <div class="divisor"></div>
+    <div class="ad-wrap" id="ad-wrap">
+      <div class="ad-before">
+        <img src="images/foto-trabalho.jpg" alt="Barbearia Arantes — atendimento"/>
+      </div>
+      <div class="ad-after" id="ad-after">
+        <img src="images/foto-corte1.jpg" alt="Resultado — corte degradê perfeito"/>
+      </div>
+      <div class="ad-label ad-label-before">Antes</div>
+      <div class="ad-label ad-label-after">Depois</div>
+      <div class="ad-handle" id="ad-handle"></div>
+    </div>
+    <p class="ad-hint">⟵ Arraste para comparar ⟶</p>
+    <p style="text-align:center;font-size:0.68rem;color:rgba(255,255,255,0.2);margin-top:0.5rem;">* Adicione fotos reais de antes/depois para maximizar o impacto.</p>
+  </div>
+</section>
+
+
+<!-- SERVIÇOS EXTRAS + PRODUTOS -->
+<section id="extras">
+  <div class="sec-inner">
+    <span class="sec-tag">Mais serviços &amp; produtos</span>
+    <h2 class="sec-titulo">Extras &amp; <span>Produtos</span></h2>
+    <div class="divisor"></div>
+    <div class="extras-cols">
+
+      <!-- SERVIÇOS ADICIONAIS -->
+      <div class="extras-bloco">
+        <h3>✂️ Serviços Adicionais</h3>
+        <div class="extra-item">
+          <div><div class="extra-nome">Sobrancelha</div></div>
+          <div class="extra-preco">R$ 15</div>
+        </div>
+        <div class="extra-item">
+          <div><div class="extra-nome">Progressiva</div></div>
+          <div class="extra-preco">R$ 85+</div>
+        </div>
+        <div class="extra-item">
+          <div><div class="extra-nome">Pigmentação</div></div>
+          <div class="extra-preco">R$ 40</div>
+        </div>
+        <div class="extra-item">
+          <div><div class="extra-nome">Corte + Pigmentação</div></div>
+          <div class="extra-preco">R$ 70</div>
+        </div>
+      </div>
+
+      <!-- PRODUTOS À VENDA -->
+      <div class="extras-bloco">
+        <h3>🛍️ Produtos à Venda</h3>
+        <div class="extra-item">
+          <div>
+            <div class="extra-nome">Cosméticos / Pomada</div>
+            <div class="extra-sub">linha geral</div>
+          </div>
+          <div class="extra-preco">R$ 40</div>
+        </div>
+        <div class="extra-item">
+          <div>
+            <div class="extra-nome">Phosphorman — Óleo para Barba</div>
+          </div>
+          <div class="extra-preco">R$ 40</div>
+        </div>
+        <div class="extra-item">
+          <div>
+            <div class="extra-nome">Phosphorman — Pomada Magnata</div>
+          </div>
+          <div class="extra-preco">R$ 30</div>
+        </div>
+        <div class="extra-item">
+          <div>
+            <div class="extra-nome">Pomadas</div>
+          </div>
+          <div class="extra-preco">R$ 35</div>
+        </div>
+        <div class="extra-item">
+          <div>
+            <div class="extra-nome">Minoxidil Kirkland<span class="badge-orig">original</span></div>
+            <div class="extra-sub">crescimento capilar — original importado</div>
+          </div>
+          <div class="extra-preco">R$ 100</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 6. DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="sec-inner">
+    <span class="sec-tag">O que dizem</span>
+    <h2 class="sec-titulo">Clientes que <span>Confiam</span></h2>
+    <div class="divisor"></div>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-quote">"</div>
+        <div class="dep-estrelas">★★★★★</div>
+        <div class="dep-texto">Melhor barbearia do João Braz! O Arantes manda muito bem no degradê. Saí do jeito que queria, bem alinhado e com o acabamento perfeito.</div>
+        <div class="dep-autor">
+          <div class="dep-avatar">R</div>
+          <div><div class="dep-nome">Rafael Souza</div><div class="dep-data">há 2 semanas</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-quote">"</div>
+        <div class="dep-estrelas">★★★★★</div>
+        <div class="dep-texto">Assino o plano mensal e vale cada centavo. Toda semana venho fazer a barba e o cabelo. Atendimento rápido, ambiente limpo e preço justo.</div>
+        <div class="dep-autor">
+          <div class="dep-avatar">M</div>
+          <div><div class="dep-nome">Mateus Carvalho</div><div class="dep-data">há 1 mês</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-quote">"</div>
+        <div class="dep-estrelas">★★★★★</div>
+        <div class="dep-texto">Fiz a progressiva aqui e ficou incrível! Ambiente super profissional, produtos de qualidade. Com certeza voltarei. Super recomendo a todos!</div>
+        <div class="dep-autor">
+          <div class="dep-avatar">A</div>
+          <div><div class="dep-nome">Amanda Ferreira</div><div class="dep-data">há 3 semanas</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-quote">"</div>
+        <div class="dep-estrelas">★★★★★</div>
+        <div class="dep-texto">Trouxe meu filho de 6 anos e adorou! Ele tem pavor de barbearia mas ficou tranquilo com o atendimento. Corte perfeito, muito cuidado com os pequenos.</div>
+        <div class="dep-autor">
+          <div class="dep-avatar">L</div>
+          <div><div class="dep-nome">Lucas Oliveira</div><div class="dep-data">há 2 meses</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-quote">"</div>
+        <div class="dep-estrelas">★★★★★</div>
+        <div class="dep-texto">Comprei o Minoxidil Kirkland lá e já tô vendo resultado! Além disso o corte ficou show. É raro encontrar um lugar que vende produto original com preço justo.</div>
+        <div class="dep-autor">
+          <div class="dep-avatar">G</div>
+          <div><div class="dep-nome">Gabriel Mendes</div><div class="dep-data">há 1 semana</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-quote">"</div>
+        <div class="dep-estrelas">★★★★★</div>
+        <div class="dep-texto">Indico para todo mundo! A pigmentação ficou natural, sem exagero. Agendei pelo WhatsApp e fui atendido no horário marcado. Zero espera, total respeito.</div>
+        <div class="dep-autor">
+          <div class="dep-avatar">F</div>
+          <div><div class="dep-nome">Felipe Andrade</div><div class="dep-data">há 3 dias</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- HORÁRIOS -->
+<section id="horarios">
+  <div class="sec-inner">
+    <span class="sec-tag">Quando nos encontrar</span>
+    <h2 class="sec-titulo">Horário de <span>Funcionamento</span></h2>
+    <div class="divisor"></div>
+    <div class="horarios-wrap">
+      <div class="hora-lista">
+        <div class="hora-item"><span class="hora-dia">Segunda – Sexta</span><span class="hora-tempo">09h às 20h</span></div>
+        <div class="hora-item"><span class="hora-dia">Sábado &amp; Domingo</span><span class="hora-tempo">09h às 19h</span></div>
+        <a href="#wizard-section" class="btn-agendar" style="margin-top:1rem;justify-content:center;width:100%;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="2" fill="currentColor"/></svg>
+          Agendar Agora
+        </a>
+      </div>
+      <div class="horario-img">
+        <img src="images/horario.jpg" alt="Horário de Funcionamento Barbearia Arantes"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="sec-inner">
+    <span class="sec-tag">Onde estamos</span>
+    <h2 class="sec-titulo">Contato &amp; <span>Localização</span></h2>
+    <div class="divisor"></div>
+    <div class="contato-grid">
+      <div class="contato-box">
+        <div class="contato-item">
+          <span class="ic">📍</span>
+          <div class="info"><strong>Endereço</strong>Av. Berlim, Parque Industrial João Braz<br/>Goiânia – GO</div>
+        </div>
+        <div class="contato-item">
+          <span class="ic">📱</span>
+          <div class="info"><strong>WhatsApp</strong>(62) 99456-7050</div>
+        </div>
+        <div class="contato-item">
+          <span class="ic">📸</span>
+          <div class="info"><strong>Instagram</strong>@barbearia_arantes062</div>
+        </div>
+        <div class="contato-item">
+          <span class="ic">🕐</span>
+          <div class="info"><strong>Agendamento</strong>Exclusivamente pelo WhatsApp</div>
+        </div>
+        <a href="https://wa.me/5562994567050?text=Vim+pelo+site+de+voc%C3%AAs.+Quero+saber+como+agendar+meu+hor%C3%A1rio+hoje." target="_blank" class="btn-agendar" style="width:100%;justify-content:center;margin-top:0.5rem;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      
+    <!-- 8. MAPA -->
+    <div class="mapa-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.4!2d-49.3!3d-16.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef2b7b4f7d3a1%3A0x1234567890abcdef!2sParque%20Industrial%20Jo%C3%A3o%20Braz%2C%20Goi%C3%A2nia%20-%20GO!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+      <div class="contrata-card">
+        <img src="images/contrata.png" alt="Barbearia Arantes — Contrata-se Barbeiro"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- 9. INSTAGRAM -->
+<section id="instagram">
+  <div class="sec-inner">
+    <span class="sec-tag">Siga nas Redes</span>
+    <h2 class="sec-titulo">No <span>Instagram</span></h2>
+    <div class="divisor"></div>
+    <div class="ig-grid">
+      <a class="ig-item" href="https://instagram.com/barbearia_arantes062" target="_blank">
+        <img src="images/foto-equipe.jpg" alt="Equipe Barbearia Arantes"/>
+        <div class="ig-item-overlay"><span>Ver mais</span></div>
+      </a>
+      <a class="ig-item" href="https://instagram.com/barbearia_arantes062" target="_blank">
+        <img src="images/foto-corte1.jpg" alt="Corte degradê"/>
+        <div class="ig-item-overlay"><span>Ver mais</span></div>
+      </a>
+      <a class="ig-item" href="https://instagram.com/barbearia_arantes062" target="_blank">
+        <img src="images/foto-ambiente.jpg" alt="Ambiente"/>
+        <div class="ig-item-overlay"><span>Ver mais</span></div>
+      </a>
+      <a class="ig-item" href="https://instagram.com/barbearia_arantes062" target="_blank">
+        <img src="images/foto-tranca.jpg" alt="Trança artística"/>
+        <div class="ig-item-overlay"><span>Ver mais</span></div>
+      </a>
+      <a class="ig-item" href="https://instagram.com/barbearia_arantes062" target="_blank">
+        <img src="images/foto-platinado.jpg" alt="Platinado"/>
+        <div class="ig-item-overlay"><span>Ver mais</span></div>
+      </a>
+      <a class="ig-item" href="https://instagram.com/barbearia_arantes062" target="_blank">
+        <img src="images/foto-cacheado.jpg" alt="Cacheado fade"/>
+        <div class="ig-item-overlay"><span>Ver mais</span></div>
+      </a>
+    </div>
+    <div class="ig-cta">
+      <a href="https://instagram.com/barbearia_arantes062" target="_blank" class="ig-btn">
+        📸 @barbearia_arantes062 · Seguir no Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <img src="images/logo.jpg" alt="Barbearia Arantes" class="footer-logo-img"/>
+  <div class="footer-slogan">Homens de Estilo · Goiânia – GO</div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/barbearia_arantes062/" target="_blank">📸 @barbearia_arantes062</a>
+  </div>
+  <p>Av. Berlim, Parque Industrial João Braz · Goiânia – GO · (62) 99456-7050</p>
+  <p style="margin-top:0.4rem;">© 2024 Barbearia Arantes · Todos os direitos reservados</p>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5562994567050?text=Vim+pelo+site+de+voc%C3%AAs.+Quero+saber+como+agendar+meu+hor%C3%A1rio+hoje." class="wpp-float" target="_blank" rel="noopener noreferrer" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+
+
+<!-- 5. BOTÃO FLUTUANTE DOURADO -->
+<a href="#" onclick="abrirCarrinho();return false;" class="float-gold" title="Montar meu horário" aria-label="Montar pedido">
+  <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+</a>
+
+<!-- CARRINHO LATERAL -->
+<div class="cart-overlay" id="cart-overlay" onclick="fecharCarrinho()"></div>
+<div class="cart-painel" id="cart-painel">
+
+  <div class="cart-header">
+    <h2>Meu <span>Carrinho</span></h2>
+    <button class="cart-fechar" onclick="fecharCarrinho()">✕</button>
+  </div>
+
+  <div class="cart-body" id="cart-body">
+
+    <!-- AGENDAMENTO -->
+    <div class="cart-agenda">
+      <h3>📅 Escolha seu Horário</h3>
+      <div class="cart-agenda-grid">
+        <div class="campo-ag">
+          <label>Data</label>
+          <input type="date" id="ag-data"/>
+        </div>
+        <div class="campo-ag">
+          <label>Horário</label>
+          <select id="ag-hora">
+            <option value="">Selecione</option>
+            <option>09:00</option><option>09:30</option>
+            <option>10:00</option><option>10:30</option>
+            <option>11:00</option><option>11:30</option>
+            <option>12:00</option><option>12:30</option>
+            <option>13:00</option><option>13:30</option>
+            <option>14:00</option><option>14:30</option>
+            <option>15:00</option><option>15:30</option>
+            <option>16:00</option><option>16:30</option>
+            <option>17:00</option><option>17:30</option>
+            <option>18:00</option><option>18:30</option>
+            <option>19:00</option><option>19:30</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITENS GERADOS POR JS -->
+    <div id="cart-itens"></div>
+
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-total-linha">
+      <span class="cart-total-label">Total estimado</span>
+      <span class="cart-total-val" id="cart-total">R$ 0</span>
+    </div>
+    <button class="btn-enviar" id="btn-enviar" onclick="enviarWpp()" disabled>
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar Pedido no WhatsApp
+    </button>
+    <p class="cart-aviso">Selecione pelo menos 1 serviço e um horário para continuar.</p>
+  </div>
+</div>
+
+<script>
+// ── CATÁLOGO COMPLETO ──────────────────────────────────────────────────────
+var CATALOGO = [
+  { grupo: "✂️ Cortes & Combos", itens: [
+    { nome: "Corte + Barba",           preco: 70 },
+    { nome: "Corte Degradê Navalhado", preco: 40 },
+    { nome: "Corte Masculino",         preco: null },
+    { nome: "Corte Infantil",          preco: null },
+    { nome: "Corte + Pigmentação",     preco: 70  }
+  ]},
+  { grupo: "🪒 Barba & Acabamentos", itens: [
+    { nome: "Barba",          preco: null },
+    { nome: "Sobrancelha",    preco: 15   },
+    { nome: "Acabamento",     preco: null }
+  ]},
+  { grupo: "💇 Tratamentos Capilares", itens: [
+    { nome: "Escovado",              preco: 180 },
+    { nome: "Luzes",                 preco: 90  },
+    { nome: "Hidratação",            preco: 35  },
+    { nome: "Relaxamento/Alisamento",preco: 40  },
+    { nome: "Progressiva",           preco: 85  },
+    { nome: "Tintura",               preco: 40  },
+    { nome: "Pigmentação",           preco: 40  },
+    { nome: "Penteado",              preco: 20  }
+  ]},
+  { grupo: "👑 Assinaturas Mensais", itens: [
+    { nome: "Plano Basic — Corte semanal",                         preco: 69.90  },
+    { nome: "Plano Plus — Corte + sobrancelha semanal",            preco: 89.90  },
+    { nome: "Plano Premium — Corte + barba + sobrancelha semanal", preco: 149.90 }
+  ]},
+  { grupo: "🛍️ Produtos à Venda", itens: [
+    { nome: "Cosméticos / Pomada",           preco: 40  },
+    { nome: "Phosphorman — Óleo para Barba", preco: 40  },
+    { nome: "Phosphorman — Pomada Magnata",  preco: 30  },
+    { nome: "Pomadas",                       preco: 35  },
+    { nome: "Minoxidil Kirkland (original)", preco: 100 }
+  ]}
+];
+
+var selecionados = {};
+
+function fmtPreco(p){
+  if(!p) return "Consulte";
+  return "R$ " + p.toFixed(2).replace(".", ",");
+}
+
+function buildCart(){
+  var c = document.getElementById("cart-itens");
+  c.innerHTML = "";
+  CATALOGO.forEach(function(g){
+    var div = document.createElement("div");
+    div.className = "cart-grupo";
+    var h = document.createElement("div");
+    h.className = "cart-grupo-titulo";
+    h.textContent = g.grupo;
+    div.appendChild(h);
+    g.itens.forEach(function(item){
+      var key = item.nome;
+      var row = document.createElement("div");
+      row.className = "cart-item" + (selecionados[key] ? " selecionado" : "");
+      row.onclick = function(){ toggleItem(key, item.preco, row); };
+      row.innerHTML =
+        '<div class="cart-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>' +
+        '<div class="cart-item-info">' +
+          '<div class="cart-item-nome">' + item.nome + '</div>' +
+          '<div class="cart-item-preco">' + fmtPreco(item.preco) + '</div>' +
+        '</div>';
+      div.appendChild(row);
+    });
+    c.appendChild(div);
+  });
+}
+
+function toggleItem(key, preco, row){
+  if(selecionados[key]){ delete selecionados[key]; row.classList.remove("selecionado"); }
+  else { selecionados[key] = preco; row.classList.add("selecionado"); }
+  atualizarTotal();
+}
+
+function atualizarTotal(){
+  var total = 0;
+  var temPreco = false;
+  Object.values(selecionados).forEach(function(p){ if(p){ total += p; temPreco = true; }});
+  var qtd = Object.keys(selecionados).length;
+  // badge
+  var badge = document.getElementById("cart-badge");
+  badge.textContent = qtd;
+  badge.className = "cart-badge" + (qtd > 0 ? " vis" : "");
+  // total
+  document.getElementById("cart-total").textContent = temPreco ? "R$ " + total.toFixed(2).replace(".", ",") : "Consulte";
+  // botão
+  var data = document.getElementById("ag-data").value;
+  var hora = document.getElementById("ag-hora").value;
+  document.getElementById("btn-enviar").disabled = !(qtd > 0 && data && hora);
+}
+
+function abrirCarrinho(){
+  buildCart();
+  document.getElementById("cart-overlay").classList.add("aberto");
+  document.getElementById("cart-painel").classList.add("aberto");
+  document.body.style.overflow = "hidden";
+}
+
+function fecharCarrinho(){
+  document.getElementById("cart-overlay").classList.remove("aberto");
+  document.getElementById("cart-painel").classList.remove("aberto");
+  document.body.style.overflow = "";
+}
+
+// Atualiza botão quando data/hora mudam
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("ag-data").addEventListener("change", atualizarTotal);
+  document.getElementById("ag-hora").addEventListener("change", atualizarTotal);
+  // Data mínima = hoje
+  var hoje = new Date().toISOString().split("T")[0];
+  document.getElementById("ag-data").min = hoje;
+});
+
+function enviarWpp(){
+  var itens = Object.keys(selecionados);
+  var data = document.getElementById("ag-data").value;
+  var hora = document.getElementById("ag-hora").value;
+  if(!itens.length || !data || !hora) return;
+
+  // Formatar data em pt-BR
+  var partes = data.split("-");
+  var dataFmt = partes[2] + "/" + partes[1] + "/" + partes[0];
+
+  var total = 0;
+  var linhas = itens.map(function(n){
+    var p = selecionados[n];
+    if(p) total += p;
+    return "  • " + n + (p ? " — R$ " + p.toFixed(2).replace(".", ",") : " — Consultar");
+  }).join("\n");
+
+  var totalTxt = total > 0 ? "\n💰 Total estimado: R$ " + total.toFixed(2).replace(".", ",") : "";
+
+  var msg = "Vim pelo site de vocês. Quero agendar meu horário!\n\n" +
+    "📅 Data: " + dataFmt + "\n" +
+    "🕐 Horário: " + hora + "\n\n" +
+    "✂️ Serviços / Produtos:\n" + linhas + totalTxt + "\n\n" +
+    "Aguardo confirmação. Obrigado!";
+
+  window.open("https://wa.me/5562994567050?text=" + encodeURIComponent(msg), "_blank");
+}
+</script>
+
+
+<script>
+// ── 3. CONTADORES ANIMADOS ──────────────────────────────────────
+var cntAtivado = false;
+function animarContadores(){
+  if(cntAtivado) return;
+  var wrap = document.getElementById("cnt-wrap");
+  if(!wrap) return;
+  var rect = wrap.getBoundingClientRect();
+  if(rect.top < window.innerHeight - 80){
+    cntAtivado = true;
+    document.querySelectorAll(".cnt-num").forEach(function(el){
+      var target = parseInt(el.dataset.target);
+      var duracao = 1800;
+      var inicio = Date.now();
+      var suffix = el.dataset.target === "100" ? "%" : "+";
+      function step(){
+        var prog = Math.min((Date.now() - inicio) / duracao, 1);
+        var ease = 1 - Math.pow(1 - prog, 3);
+        el.textContent = Math.round(ease * target).toLocaleString("pt-BR") + suffix;
+        if(prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+}
+window.addEventListener("scroll", animarContadores);
+animarContadores();
+
+// ── 4. ANTES/DEPOIS SLIDER ──────────────────────────────────────
+(function(){
+  var wrap = document.getElementById("ad-wrap");
+  if(!wrap) return;
+  var after = document.getElementById("ad-after");
+  var handle = document.getElementById("ad-handle");
+  var drag = false;
+
+  function setPos(pct){
+    pct = Math.max(5, Math.min(95, pct));
+    after.style.clipPath = "inset(0 " + (100-pct) + "% 0 0)";
+    handle.style.left = pct + "%";
+  }
+  setPos(50);
+
+  function getX(e){ return e.touches ? e.touches[0].clientX : e.clientX; }
+
+  wrap.addEventListener("mousedown",  function(e){ drag=true; e.preventDefault(); });
+  wrap.addEventListener("touchstart", function(e){ drag=true; }, {passive:true});
+  window.addEventListener("mouseup",  function(){ drag=false; });
+  window.addEventListener("touchend", function(){ drag=false; });
+  window.addEventListener("mousemove", function(e){
+    if(!drag) return;
+    var r = wrap.getBoundingClientRect();
+    setPos(((getX(e)-r.left)/r.width)*100);
+  });
+  window.addEventListener("touchmove", function(e){
+    if(!drag) return;
+    var r = wrap.getBoundingClientRect();
+    setPos(((getX(e)-r.left)/r.width)*100);
+  }, {passive:true});
+})();
+
+// ── 7. TOGGLE TEMA ──────────────────────────────────────────────
+function toggleTema(){
+  var html = document.documentElement;
+  var btn = document.getElementById("btn-tema");
+  if(html.getAttribute("data-tema") === "claro"){
+    html.removeAttribute("data-tema");
+    btn.textContent = "🌙 Tema";
+    localStorage.setItem("tema","escuro");
+  } else {
+    html.setAttribute("data-tema","claro");
+    btn.textContent = "🌑 Tema";
+    localStorage.setItem("tema","claro");
+  }
+}
+// restaurar tema salvo
+(function(){
+  var t = localStorage.getItem("tema");
+  if(t==="claro"){
+    document.documentElement.setAttribute("data-tema","claro");
+    var b = document.getElementById("btn-tema");
+    if(b) b.textContent = "🌑 Tema";
+  }
+})();
+
+// ════════════════════════════════════════════════════════════════════
+//   WIZARD DE AGENDAMENTO — 4 ETAPAS
+// ════════════════════════════════════════════════════════════════════
+
+// ── DADOS ──
+var WZ_SERVICOS = [
+  { nome: "Corte + Barba",           preco: 70,    icon: "✂️🪒", badge: "TOP",   desc: "Combo completo" },
+  { nome: "Corte Degradê Navalhado", preco: 40,    icon: "⚡",    desc: "Degradê na navalha" },
+  { nome: "Corte Masculino",         preco: null,  icon: "✂️",   desc: "Tradicional/moderno" },
+  { nome: "Corte Infantil",          preco: null,  icon: "👦",   desc: "Atendimento pra crianças" },
+  { nome: "Barba",                   preco: null,  icon: "🪒",   desc: "Desenho e hidratação" },
+  { nome: "Sobrancelha",             preco: 15,    icon: "👁️",   desc: "Design preciso" },
+  { nome: "Escovado",                preco: 180,   icon: "💇",   desc: "Modeladora elegante" },
+  { nome: "Luzes",                   preco: 90,    icon: "✨",   desc: "Mechas modernas" },
+  { nome: "Hidratação",              preco: 35,    icon: "💧",   desc: "Tratamento profundo" },
+  { nome: "Progressiva",             preco: 85,    icon: "🧴",   desc: "Redução de volume" },
+  { nome: "Tintura",                 preco: 40,    icon: "🎨",   desc: "Cobertura/mudança" },
+  { nome: "Pigmentação",             preco: 40,    icon: "🖤",   desc: "Disfarce de falhas" }
+];
+
+// Horários por dia da semana (0=domingo, 1=seg, ..., 6=sab)
+// Seg-Sex: 9h-20h | Sáb-Dom: 9h-19h
+var WZ_HORARIOS_BASE = {
+  semanaSemFim: ["09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30"],
+  fimDeSemana:  ["09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30"]
+};
+
+// ── ESTADO ──
+var wzEstado = {
+  etapa: 1,
+  servicos: [],   // array de nomes selecionados
+  barbeiro: null,
+  data: null,     // Date object
+  hora: null,
+  nome: "",
+  tel: "",
+  obs: "",
+  pixAtivo: false,
+  pixValor: ""
+};
+
+var wzCalRef = new Date();
+wzCalRef.setDate(1);
+
+// ── RENDERIZAÇÃO ETAPA 1: SERVIÇOS ──
+function wzRenderServicos(){
+  var grid = document.getElementById("wz-servicos-grid");
+  if(!grid) return;
+  grid.innerHTML = WZ_SERVICOS.map(function(s, i){
+    var sel = wzEstado.servicos.indexOf(s.nome) > -1;
+    var precoTxt = s.preco ? "R$ " + s.preco.toFixed(2).replace(".",",") : "Consulte";
+    return '<div class="wz-card' + (sel ? ' sel' : '') + '" onclick="wzToggleServico(' + i + ')">' +
+      (s.badge ? '<span class="wz-card-badge">' + s.badge + '</span>' : '') +
+      '<span class="wz-card-icon">' + s.icon + '</span>' +
+      '<div class="wz-card-nome">' + s.nome + '</div>' +
+      '<div class="wz-card-desc">' + s.desc + '</div>' +
+      '<div class="wz-card-preco">' + precoTxt + '</div>' +
+    '</div>';
+  }).join("");
+}
+
+function wzToggleServico(idx){
+  var nome = WZ_SERVICOS[idx].nome;
+  var i = wzEstado.servicos.indexOf(nome);
+  if(i > -1) wzEstado.servicos.splice(i, 1);
+  else wzEstado.servicos.push(nome);
+  wzRenderServicos();
+  wzAtualizarBotoes();
+}
+
+// ── ETAPA 2: BARBEIRO ──
+function selecionarBarbeiro(el){
+  document.querySelectorAll('[data-screen="2"] .wz-card').forEach(function(c){ c.classList.remove("sel"); });
+  el.classList.add("sel");
+  wzEstado.barbeiro = el.dataset.barbeiro;
+  wzAtualizarBotoes();
+}
+
+// ── ETAPA 3: CALENDÁRIO ──
+function wzRenderCalendario(){
+  var ref = wzCalRef;
+  var hoje = new Date();
+  hoje.setHours(0,0,0,0);
+  var mesNome = ref.toLocaleString("pt-BR", { month: "long", year: "numeric" });
+  document.getElementById("wz-cal-mes").textContent = mesNome;
+
+  // botão anterior fica off se já está no mês atual
+  var atualMes = new Date();
+  atualMes.setDate(1);
+  atualMes.setHours(0,0,0,0);
+  document.getElementById("wz-cal-prev").disabled = (ref.getTime() <= atualMes.getTime());
+
+  // primeiro dia do mês (0=dom,6=sab)
+  var primeiro = new Date(ref.getFullYear(), ref.getMonth(), 1).getDay();
+  var diasNoMes = new Date(ref.getFullYear(), ref.getMonth() + 1, 0).getDate();
+
+  var html = "";
+  for(var i = 0; i < primeiro; i++) html += '<div class="wz-cal-dia empty"></div>';
+  for(var d = 1; d <= diasNoMes; d++){
+    var dt = new Date(ref.getFullYear(), ref.getMonth(), d);
+    var dtKey = dt.toISOString().split("T")[0];
+    var off = dt < hoje;
+    var ehHoje = dt.getTime() === hoje.getTime();
+    var sel = wzEstado.data && wzEstado.data.toISOString().split("T")[0] === dtKey;
+    var cls = "wz-cal-dia" + (off ? " off" : "") + (ehHoje ? " hoje" : "") + (sel ? " sel" : "");
+    html += '<div class="' + cls + '"' + (off ? '' : ' onclick="wzSelecionarDia(\'' + dtKey + '\')"') + '>' + d + '</div>';
+  }
+  document.getElementById("wz-cal-grid").innerHTML = html;
+}
+
+function navegarMes(delta){
+  wzCalRef.setMonth(wzCalRef.getMonth() + delta);
+  wzRenderCalendario();
+}
+
+function wzSelecionarDia(dtKey){
+  var partes = dtKey.split("-");
+  wzEstado.data = new Date(parseInt(partes[0]), parseInt(partes[1])-1, parseInt(partes[2]));
+  wzEstado.hora = null;
+  wzRenderCalendario();
+  wzRenderHorarios();
+  wzAtualizarBotoes();
+}
+
+function wzRenderHorarios(){
+  var data = wzEstado.data;
+  var box = document.getElementById("wz-horarios-grid");
+  var dataLabel = document.getElementById("wz-horarios-data");
+  if(!data){
+    dataLabel.textContent = "Selecione um dia primeiro";
+    box.innerHTML = '<div class="wz-horarios-vazio">Escolha uma data no calendário<br/>para ver os horários disponíveis ⤴</div>';
+    return;
+  }
+  var dia = data.getDay(); // 0=dom, 6=sab
+  var lista = (dia === 0 || dia === 6) ? WZ_HORARIOS_BASE.fimDeSemana : WZ_HORARIOS_BASE.semanaSemFim;
+  var diaNome = data.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long" });
+  dataLabel.textContent = diaNome.charAt(0).toUpperCase() + diaNome.slice(1);
+
+  // se for hoje, esconde horários já passados (+30min de buffer)
+  var agora = new Date();
+  var ehHoje = data.toDateString() === agora.toDateString();
+  var horaMin = ehHoje ? (agora.getHours() + (agora.getMinutes() > 30 ? 1 : 0.5)) : 0;
+
+  var disponiveis = lista.filter(function(h){
+    var p = h.split(":");
+    var v = parseInt(p[0]) + (parseInt(p[1])/60);
+    return v >= horaMin;
+  });
+
+  if(!disponiveis.length){
+    box.innerHTML = '<div class="wz-horarios-vazio">😴 Não há mais horários disponíveis<br/>para hoje. Tente outra data.</div>';
+    return;
+  }
+
+  box.innerHTML = disponiveis.map(function(h){
+    var sel = wzEstado.hora === h;
+    return '<button class="wz-hora-btn' + (sel ? ' sel' : '') + '" onclick="wzSelecionarHora(\'' + h + '\')">' + h + '</button>';
+  }).join("");
+}
+
+function wzSelecionarHora(h){
+  wzEstado.hora = h;
+  wzRenderHorarios();
+  wzAtualizarBotoes();
+}
+
+// ── NAVEGAÇÃO ENTRE ETAPAS ──
+function navegarWizard(delta){
+  var prox = wzEstado.etapa + delta;
+  if(prox < 1) return;
+  if(prox > 4){ wzEnviar(); return; }
+  wzIrPara(prox);
+}
+
+function wzIrPara(etapa){
+  wzEstado.etapa = etapa;
+
+  // screens
+  document.querySelectorAll(".wz-screen").forEach(function(s){
+    s.classList.toggle("ativa", parseInt(s.dataset.screen) === etapa);
+  });
+
+  // dots
+  document.querySelectorAll(".wz-step-dot").forEach(function(d){
+    var n = parseInt(d.dataset.step);
+    d.classList.toggle("active", n === etapa);
+    d.classList.toggle("done", n < etapa);
+  });
+
+  // lines
+  document.querySelectorAll(".wz-step-line").forEach(function(l){
+    var n = parseInt(l.dataset.line.split("-")[0]);
+    l.classList.toggle("done", n < etapa);
+  });
+
+  // ações específicas
+  if(etapa === 3) wzRenderCalendario();
+  if(etapa === 4) wzPreencherResumo();
+
+  wzAtualizarBotoes();
+
+  // scroll suave pro topo do wizard
+  var w = document.getElementById("wizard-section");
+  if(w) w.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function wzAtualizarBotoes(){
+  var btnVoltar = document.getElementById("wz-btn-voltar");
+  var btnProx = document.getElementById("wz-btn-prox");
+  if(!btnVoltar || !btnProx) return;
+
+  btnVoltar.disabled = wzEstado.etapa === 1;
+
+  var ok = false;
+  switch(wzEstado.etapa){
+    case 1: ok = wzEstado.servicos.length > 0; break;
+    case 2: ok = !!wzEstado.barbeiro; break;
+    case 3: ok = !!wzEstado.data && !!wzEstado.hora; break;
+    case 4: ok = !!document.getElementById("wz-nome").value.trim() && !!document.getElementById("wz-tel").value.trim(); break;
+  }
+  btnProx.disabled = !ok;
+  btnProx.innerHTML = wzEstado.etapa === 4
+    ? '<svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Confirmar via WhatsApp'
+    : 'Próximo ›';
+  btnProx.classList.toggle("wz-btn-final", wzEstado.etapa === 4);
+  btnProx.classList.toggle("wz-btn-prox", wzEstado.etapa !== 4);
+}
+
+// ── ETAPA 4: RESUMO ──
+function wzPreencherResumo(){
+  // serviços
+  var servicosLinha = wzEstado.servicos.length
+    ? wzEstado.servicos.join(", ")
+    : "—";
+  document.getElementById("rs-servicos").textContent = servicosLinha;
+
+  document.getElementById("rs-barbeiro").textContent = wzEstado.barbeiro || "—";
+
+  var dataTxt = wzEstado.data
+    ? wzEstado.data.toLocaleDateString("pt-BR", { weekday: "short", day: "2-digit", month: "long" })
+    : "—";
+  document.getElementById("rs-data").textContent = dataTxt;
+  document.getElementById("rs-hora").textContent = wzEstado.hora || "—";
+
+  // total
+  var total = 0;
+  var temPreco = false;
+  wzEstado.servicos.forEach(function(nome){
+    var s = WZ_SERVICOS.find(function(x){ return x.nome === nome; });
+    if(s && s.preco){ total += s.preco; temPreco = true; }
+  });
+  document.getElementById("rs-total").textContent = temPreco
+    ? "R$ " + total.toFixed(2).replace(".",",") + (wzEstado.servicos.some(function(n){ var s = WZ_SERVICOS.find(function(x){return x.nome===n;}); return s && !s.preco; }) ? " +" : "")
+    : "A consultar";
+}
+
+// ── PIX ──
+function togglePix(){
+  wzEstado.pixAtivo = !wzEstado.pixAtivo;
+  var box = document.getElementById("wz-pix-box");
+  var toggle = document.getElementById("wz-pix-toggle");
+  box.classList.toggle("on", wzEstado.pixAtivo);
+  toggle.classList.toggle("on", wzEstado.pixAtivo);
+}
+
+function copiarPix(){
+  var codigo = document.getElementById("wz-pix-codigo").textContent;
+  navigator.clipboard.writeText(codigo).then(function(){
+    var btn = document.getElementById("wz-copia-btn");
+    btn.classList.add("copiado");
+    btn.textContent = "✓ Copiado!";
+    setTimeout(function(){
+      btn.classList.remove("copiado");
+      btn.innerHTML = "📋 Copiar código PIX";
+    }, 2000);
+  }).catch(function(){
+    // fallback pra navegadores antigos
+    var area = document.createElement("textarea");
+    area.value = codigo;
+    document.body.appendChild(area);
+    area.select();
+    try { document.execCommand("copy"); } catch(e){}
+    document.body.removeChild(area);
+  });
+}
+
+// ── ENVIO FINAL ──
+function wzEnviar(){
+  var nome = document.getElementById("wz-nome").value.trim();
+  var tel = document.getElementById("wz-tel").value.trim();
+  var obs = document.getElementById("wz-obs").value.trim();
+  var pixValor = document.getElementById("wz-pix-valor") ? document.getElementById("wz-pix-valor").value.trim() : "";
+
+  if(!nome || !tel) return;
+
+  // montar mensagem
+  var servicosTxt = wzEstado.servicos.map(function(n){
+    var s = WZ_SERVICOS.find(function(x){ return x.nome === n; });
+    return "  • " + n + (s && s.preco ? " — R$ " + s.preco.toFixed(2).replace(".",",") : " — consultar");
+  }).join("\n");
+
+  var total = 0;
+  var temPreco = false;
+  wzEstado.servicos.forEach(function(nome){
+    var s = WZ_SERVICOS.find(function(x){ return x.nome === nome; });
+    if(s && s.preco){ total += s.preco; temPreco = true; }
+  });
+
+  var dataTxt = wzEstado.data.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long", year: "numeric" });
+
+  var msg =
+    "💈 *NOVO AGENDAMENTO* — Site Oficial\n\n" +
+    "👤 *Cliente:* " + nome + "\n" +
+    "📱 *Telefone:* " + tel + "\n\n" +
+    "📅 *Data:* " + dataTxt + "\n" +
+    "🕐 *Horário:* " + wzEstado.hora + "\n" +
+    "✂️ *Barbeiro:* " + wzEstado.barbeiro + "\n\n" +
+    "*Serviços:*\n" + servicosTxt + "\n";
+
+  if(temPreco){
+    msg += "\n💰 *Total estimado:* R$ " + total.toFixed(2).replace(".",",") + "\n";
+  }
+
+  if(obs){
+    msg += "\n📝 *Observação:* " + obs + "\n";
+  }
+
+  if(wzEstado.pixAtivo && pixValor){
+    msg += "\n💸 *PIX adiantado:* R$ " + pixValor + " — vou enviar o comprovante em seguida.\n";
+  }
+
+  msg += "\nAguardo confirmação. Obrigado! 🙏";
+
+  // abrir whatsapp
+  window.open("https://wa.me/5562994567050?text=" + encodeURIComponent(msg), "_blank");
+
+  // mostrar tela de sucesso
+  document.querySelectorAll(".wz-screen").forEach(function(s){ s.classList.remove("ativa"); });
+  document.getElementById("wz-nav").style.display = "none";
+  document.getElementById("wz-sucesso").classList.add("show");
+}
+
+function reiniciarWizard(){
+  wzEstado = { etapa: 1, servicos: [], barbeiro: null, data: null, hora: null, nome: "", tel: "", obs: "", pixAtivo: false, pixValor: "" };
+  document.getElementById("wz-nome").value = "";
+  document.getElementById("wz-tel").value = "";
+  document.getElementById("wz-obs").value = "";
+  if(document.getElementById("wz-pix-valor")) document.getElementById("wz-pix-valor").value = "";
+  document.querySelectorAll('[data-screen="2"] .wz-card').forEach(function(c){ c.classList.remove("sel"); });
+  document.getElementById("wz-pix-box").classList.remove("on");
+  document.getElementById("wz-pix-toggle").classList.remove("on");
+  document.getElementById("wz-sucesso").classList.remove("show");
+  document.getElementById("wz-nav").style.display = "flex";
+  wzRenderServicos();
+  wzIrPara(1);
+}
+
+// ── ATALHO PRA ASSINAR PLANO ──
+function assinarPlano(nome, valor){
+  var msg = "💈 Olá! Quero assinar o *Plano " + nome + "* (R$ " + valor + "/mês).\n\n" +
+            "Vim pelo site de vocês — me passa os próximos passos pra começar minha assinatura. 🙏";
+  window.open("https://wa.me/5562994567050?text=" + encodeURIComponent(msg), "_blank");
+}
+
+// ── INIT ──
+document.addEventListener("DOMContentLoaded", function(){
+  wzRenderServicos();
+  wzRenderCalendario();
+
+  // listeners pros inputs finais
+  ["wz-nome","wz-tel"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener("input", wzAtualizarBotoes);
+  });
+});
+</script>
+
+</body>
+</html>
