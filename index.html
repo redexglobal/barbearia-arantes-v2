@@ -692,46 +692,84 @@
     font-size:1.4rem;font-weight:900;}
   .wz-resumo-divider{height:1px;background:rgba(201,168,76,0.15);margin:0.3rem 0;}
 
-  /* PIX */
-  .wz-pix{background:rgba(255,255,255,0.02);border:1px dashed rgba(201,168,76,0.3);
-    border-radius:14px;padding:1.3rem;margin-top:1rem;}
-  .wz-pix-toggle{display:flex;align-items:center;gap:0.7rem;cursor:pointer;
-    user-select:none;}
-  .wz-pix-toggle-switch{width:40px;height:22px;background:rgba(255,255,255,0.1);
-    border-radius:50px;position:relative;transition:background 0.2s;flex-shrink:0;}
-  .wz-pix-toggle-switch::after{content:'';position:absolute;top:3px;left:3px;
-    width:16px;height:16px;background:#fff;border-radius:50%;
-    transition:transform 0.25s cubic-bezier(.4,0,.2,1);}
-  .wz-pix-toggle.on .wz-pix-toggle-switch{background:var(--dourado);}
-  .wz-pix-toggle.on .wz-pix-toggle-switch::after{transform:translateX(18px);background:#000;}
-  .wz-pix-toggle-label{font-size:0.78rem;font-weight:800;color:var(--branco);
-    letter-spacing:1px;}
-  .wz-pix-toggle-sub{font-size:0.62rem;color:rgba(255,255,255,0.4);
-    margin-top:2px;font-weight:600;}
-  .wz-pix-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
-  .wz-pix.on .wz-pix-body{max-height:600px;}
-  .wz-pix-conteudo{padding-top:1.2rem;display:flex;gap:1.2rem;align-items:flex-start;
-    flex-wrap:wrap;}
-  .wz-pix-qr{background:#fff;border-radius:12px;padding:8px;flex-shrink:0;
-    box-shadow:0 8px 24px rgba(0,0,0,0.4);}
-  .wz-pix-qr img{display:block;width:140px;height:140px;}
-  .wz-pix-info{flex:1;min-width:200px;}
-  .wz-pix-info p{font-size:0.72rem;color:rgba(255,255,255,0.6);line-height:1.6;
-    margin-bottom:0.7rem;}
-  .wz-pix-valor-grupo{display:flex;gap:0.5rem;margin-bottom:0.8rem;}
-  .wz-pix-valor-grupo input{flex:1;}
-  .wz-copia-cola{background:rgba(0,0,0,0.4);border:1px solid rgba(201,168,76,0.2);
-    border-radius:8px;padding:0.6rem 0.8rem;font-family:'Courier New',monospace;
-    font-size:0.62rem;color:rgba(255,255,255,0.5);
-    word-break:break-all;line-height:1.4;max-height:60px;overflow:hidden;
+  /* PIX (sempre visível) */
+  .wz-pix-novo{background:linear-gradient(180deg,rgba(201,168,76,0.06),rgba(0,0,0,0.2));
+    border:2px solid rgba(201,168,76,0.25);border-radius:18px;
+    padding:1.6rem;margin-top:1.2rem;
+    box-shadow:0 12px 40px rgba(0,0,0,0.3);position:relative;overflow:hidden;}
+  .wz-pix-novo::before{content:'';position:absolute;top:-50%;right:-30%;
+    width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);
+    pointer-events:none;}
+  .wz-pix-header{position:relative;z-index:1;padding-bottom:1.2rem;margin-bottom:1.2rem;
+    border-bottom:1px solid rgba(201,168,76,0.18);}
+  .wz-pix-titulo{font-family:'Playfair Display',serif;font-size:1.25rem;
+    font-weight:900;color:var(--branco);line-height:1.2;letter-spacing:-0.3px;}
+  .wz-pix-titulo span{color:var(--dourado);}
+  .wz-pix-sub{font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;
+    font-weight:600;line-height:1.5;}
+  .wz-pix-conteudo{position:relative;z-index:1;display:flex;gap:1.5rem;
+    align-items:flex-start;flex-wrap:wrap;}
+  .wz-pix-qr-wrap{display:flex;flex-direction:column;align-items:center;gap:0.6rem;
+    flex-shrink:0;}
+  .wz-pix-qr{background:#fff;border-radius:14px;padding:10px;
+    box-shadow:0 12px 32px rgba(201,168,76,0.25),0 0 0 2px rgba(201,168,76,0.3);
+    position:relative;}
+  .wz-pix-qr::before{content:'';position:absolute;inset:-6px;
+    border:1px dashed rgba(201,168,76,0.35);border-radius:18px;pointer-events:none;}
+  .wz-pix-qr img{display:block;width:170px;height:170px;}
+  .wz-pix-qr-label{font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.55);
+    text-align:center;letter-spacing:1px;line-height:1.4;text-transform:uppercase;}
+
+  .wz-pix-info{flex:1;min-width:220px;display:flex;flex-direction:column;gap:0.5rem;}
+  .wz-pix-passo{display:flex;align-items:center;gap:0.6rem;
+    font-size:0.72rem;font-weight:800;color:rgba(255,255,255,0.7);
+    letter-spacing:1.5px;text-transform:uppercase;margin-top:0.6rem;}
+  .wz-pix-passo-num{display:flex;align-items:center;justify-content:center;
+    width:22px;height:22px;border-radius:50%;background:var(--dourado);
+    color:#000;font-size:0.72rem;font-weight:900;flex-shrink:0;}
+  .wz-pix-valor-input{width:100%;background:rgba(255,255,255,0.06);
+    border:2px solid rgba(201,168,76,0.3);border-radius:10px;
+    padding:0.85rem 1rem;color:var(--dourado);
+    font-family:'Playfair Display',serif;font-size:1.4rem !important;
+    font-weight:900;outline:none;transition:all 0.2s;text-align:center;}
+  .wz-pix-valor-input:focus{border-color:var(--dourado);background:rgba(201,168,76,0.08);}
+  .wz-pix-valor-input::placeholder{color:rgba(201,168,76,0.4);}
+  .wz-pix-valor-input.pulse{animation:pixPulse 0.6s cubic-bezier(.5,0,.3,1);}
+  @keyframes pixPulse{
+    0%{transform:scale(1);box-shadow:0 0 0 0 rgba(201,168,76,0.5);}
+    50%{transform:scale(1.03);box-shadow:0 0 0 12px rgba(201,168,76,0);}
+    100%{transform:scale(1);box-shadow:0 0 0 0 rgba(201,168,76,0);}
+  }
+  .wz-pix-btn-sugerir{background:transparent;border:none;color:var(--dourado);
+    font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    cursor:pointer;padding:0.3rem 0;margin-top:-0.2rem;
+    display:inline-flex;align-items:center;gap:0.3rem;justify-content:flex-start;
+    transition:opacity 0.2s;font-family:'Montserrat',sans-serif;}
+  .wz-pix-btn-sugerir:hover{opacity:0.7;text-decoration:underline;}
+
+  .wz-copia-cola{background:rgba(0,0,0,0.55);border:1px solid rgba(201,168,76,0.25);
+    border-radius:10px;padding:0.7rem 0.9rem;font-family:'Courier New',monospace;
+    font-size:0.6rem;color:rgba(255,255,255,0.55);
+    word-break:break-all;line-height:1.5;max-height:80px;overflow-y:auto;
     position:relative;cursor:pointer;}
-  .wz-copia-btn{margin-top:0.5rem;background:rgba(201,168,76,0.1);
-    border:1px solid rgba(201,168,76,0.3);color:var(--dourado);
-    padding:0.5rem 1rem;border-radius:8px;cursor:pointer;width:100%;
-    font-size:0.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
-    transition:all 0.2s;font-family:'Montserrat',sans-serif;}
-  .wz-copia-btn:hover{background:var(--dourado);color:#000;}
-  .wz-copia-btn.copiado{background:#22c55e;color:#fff;border-color:#22c55e;}
+  .wz-copia-cola::-webkit-scrollbar{width:3px;}
+  .wz-copia-cola::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
+  .wz-copia-btn{margin-top:0.3rem;background:linear-gradient(135deg,var(--dourado),var(--dourado-claro));
+    border:none;color:#000;
+    padding:0.75rem 1rem;border-radius:10px;cursor:pointer;width:100%;
+    font-size:0.74rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;
+    transition:all 0.2s;font-family:'Montserrat',sans-serif;
+    box-shadow:0 6px 18px rgba(201,168,76,0.3);}
+  .wz-copia-btn:hover{transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(201,168,76,0.5);}
+  .wz-copia-btn.copiado{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;
+    box-shadow:0 6px 18px rgba(34,197,94,0.4);}
+
+  .wz-pix-aviso{background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.25);
+    border-radius:10px;padding:0.8rem 1rem;
+    font-size:0.74rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-top:0.3rem;}
+  .wz-pix-aviso strong{color:#4ade80;}
 
   /* navegação wizard */
   .wz-nav{display:flex;justify-content:space-between;align-items:center;
@@ -783,6 +821,8 @@
     .wz-screen-titulo{font-size:1.3rem;}
     .wz-btn{padding:0.85rem 1.3rem;font-size:0.7rem;}
     .wz-pix-conteudo{flex-direction:column;align-items:center;text-align:center;}
+    .wz-pix-info{width:100%;}
+    .wz-pix-passo{justify-content:center;}
   }
 
 </style>
@@ -1185,28 +1225,34 @@
                 <textarea id="wz-obs" placeholder="Algo que o barbeiro precisa saber? Ex: 'cabelo molhado, traz tudo curto'"></textarea>
               </div>
 
-              <!-- PIX OPCIONAL -->
-              <div class="wz-pix" id="wz-pix-box">
-                <div class="wz-pix-toggle" id="wz-pix-toggle" onclick="togglePix()">
-                  <div class="wz-pix-toggle-switch"></div>
-                  <div>
-                    <div class="wz-pix-toggle-label">💸 Adiantar via PIX</div>
-                    <div class="wz-pix-toggle-sub">Opcional · você escolhe quanto pagar agora</div>
-                  </div>
+              <!-- PIX SEMPRE VISÍVEL -->
+              <div class="wz-pix-novo">
+                <div class="wz-pix-header">
+                  <div class="wz-pix-titulo">💸 Pague via PIX e <span>garanta seu horário</span></div>
+                  <div class="wz-pix-sub">Pagamento adiantado (sinal ou total) confirma sua vaga · escaneie ou copie a chave</div>
                 </div>
-                <div class="wz-pix-body">
-                  <div class="wz-pix-conteudo">
+                <div class="wz-pix-conteudo">
+                  <div class="wz-pix-qr-wrap">
                     <div class="wz-pix-qr">
                       <img src="images/pix-qrcode.jpeg" alt="QR Code PIX Barbearia Arantes"/>
                     </div>
-                    <div class="wz-pix-info">
-                      <p>Pague pelo app do seu banco — escaneie o QR ou copie a chave abaixo.</p>
-                      <div class="wz-input-grupo" style="margin-bottom:0.7rem;">
-                        <label for="wz-pix-valor">Valor (R$)</label>
-                        <input type="text" id="wz-pix-valor" placeholder="Ex: 20,00" inputmode="decimal"/>
-                      </div>
-                      <div class="wz-copia-cola" id="wz-pix-codigo">00020101021126790014BR.GOV.BCB.PIX2557pix-qr.mercadopago.com/instore/ol/v2/rYraTnb7cyuEvnVoK4035204000053039865802BR5917BARBEARIA ARANTES6009SAO PAULO62080504mpis6304A86C</div>
-                      <button class="wz-copia-btn" id="wz-copia-btn" onclick="copiarPix()">📋 Copiar código PIX</button>
+                    <div class="wz-pix-qr-label">📱 Escaneie<br/>com o app do banco</div>
+                  </div>
+                  <div class="wz-pix-info">
+                    <div class="wz-pix-passo"><span class="wz-pix-passo-num">1</span> Defina o valor (R$)</div>
+                    <input type="text" id="wz-pix-valor" placeholder="0,00" inputmode="decimal" class="wz-pix-valor-input"/>
+                    <button class="wz-pix-btn-sugerir" type="button" onclick="usarValorTotal()">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><polyline points="6 9 12 15 18 9"/></svg>
+                      Usar valor total do agendamento
+                    </button>
+
+                    <div class="wz-pix-passo"><span class="wz-pix-passo-num">2</span> Pague no app do seu banco</div>
+                    <div class="wz-copia-cola" id="wz-pix-codigo">00020101021126790014BR.GOV.BCB.PIX2557pix-qr.mercadopago.com/instore/ol/v2/rYraTnb7cyuEvnVoK4035204000053039865802BR5917BARBEARIA ARANTES6009SAO PAULO62080504mpis6304A86C</div>
+                    <button class="wz-copia-btn" id="wz-copia-btn" onclick="copiarPix()">📋 Copiar código PIX (Copia &amp; Cola)</button>
+
+                    <div class="wz-pix-passo"><span class="wz-pix-passo-num">3</span> Envie o comprovante no WhatsApp</div>
+                    <div class="wz-pix-aviso">
+                      💬 Após clicar em <strong>Confirmar via WhatsApp</strong>, anexe o <strong>comprovante do PIX</strong> direto no chat. O barbeiro confirma seu horário em seguida.
                     </div>
                   </div>
                 </div>
@@ -1890,9 +1936,7 @@ var wzEstado = {
   hora: null,
   nome: "",
   tel: "",
-  obs: "",
-  pixAtivo: false,
-  pixValor: ""
+  obs: ""
 };
 
 var wzCalRef = new Date();
@@ -2111,12 +2155,22 @@ function wzPreencherResumo(){
 }
 
 // ── PIX ──
-function togglePix(){
-  wzEstado.pixAtivo = !wzEstado.pixAtivo;
-  var box = document.getElementById("wz-pix-box");
-  var toggle = document.getElementById("wz-pix-toggle");
-  box.classList.toggle("on", wzEstado.pixAtivo);
-  toggle.classList.toggle("on", wzEstado.pixAtivo);
+function usarValorTotal(){
+  var total = 0;
+  wzEstado.servicos.forEach(function(nome){
+    var s = WZ_SERVICOS.find(function(x){ return x.nome === nome; });
+    if(s && s.preco){ total += s.preco; }
+  });
+  var input = document.getElementById("wz-pix-valor");
+  if(total > 0){
+    input.value = total.toFixed(2).replace(".", ",");
+    input.focus();
+    input.classList.add("pulse");
+    setTimeout(function(){ input.classList.remove("pulse"); }, 600);
+  } else {
+    input.placeholder = "Serviços sem preço fixo — defina manualmente";
+    input.focus();
+  }
 }
 
 function copiarPix(){
@@ -2181,8 +2235,10 @@ function wzEnviar(){
     msg += "\n📝 *Observação:* " + obs + "\n";
   }
 
-  if(wzEstado.pixAtivo && pixValor){
-    msg += "\n💸 *PIX adiantado:* R$ " + pixValor + " — vou enviar o comprovante em seguida.\n";
+  if(pixValor){
+    msg += "\n💸 *PIX enviado:* R$ " + pixValor + "\n📎 *Vou anexar o comprovante agora aqui no chat.*\n";
+  } else {
+    msg += "\n💸 *PIX:* vou pagar via PIX e enviar o comprovante em seguida.\n";
   }
 
   msg += "\nAguardo confirmação. Obrigado! 🙏";
@@ -2197,14 +2253,12 @@ function wzEnviar(){
 }
 
 function reiniciarWizard(){
-  wzEstado = { etapa: 1, servicos: [], barbeiro: null, data: null, hora: null, nome: "", tel: "", obs: "", pixAtivo: false, pixValor: "" };
+  wzEstado = { etapa: 1, servicos: [], barbeiro: null, data: null, hora: null, nome: "", tel: "", obs: "" };
   document.getElementById("wz-nome").value = "";
   document.getElementById("wz-tel").value = "";
   document.getElementById("wz-obs").value = "";
   if(document.getElementById("wz-pix-valor")) document.getElementById("wz-pix-valor").value = "";
   document.querySelectorAll('[data-screen="2"] .wz-card').forEach(function(c){ c.classList.remove("sel"); });
-  document.getElementById("wz-pix-box").classList.remove("on");
-  document.getElementById("wz-pix-toggle").classList.remove("on");
   document.getElementById("wz-sucesso").classList.remove("show");
   document.getElementById("wz-nav").style.display = "flex";
   wzRenderServicos();
